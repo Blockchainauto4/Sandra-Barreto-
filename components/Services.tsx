@@ -13,6 +13,9 @@ const Services: React.FC = () => {
                     <h3 className="text-3xl md:text-4xl font-serif font-bold text-brand-dark">
                         Especialidades em Podologia
                     </h3>
+                    <p className="mt-4 text-gray-600 max-w-3xl mx-auto">
+                        Oferecemos uma gama completa de tratamentos para garantir a saúde e o bem-estar dos seus pés. Nossa clínica de podologia no Campo Belo é a referência para quem busca um tratamento para os pés no Brooklin ou uma podóloga em Moema, atendendo toda a Zona Sul de SP com excelência.
+                    </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {SERVICES_DATA.map((service, index) => (

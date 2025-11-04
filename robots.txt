@@ -5,9 +5,7 @@ User-agent: *
 Allow: /
 
 # Desabilita o rastreamento da página de administração
-# Embora crawlers geralmente ignorem hashes, é uma boa prática ser explícito.
 Disallow: /#admin
 
 # Localização do Sitemap
-# Substitua 'https://www.yourdomain.com' pelo seu domínio real.
-Sitemap: https://www.yourdomain.com/sitemap.xml
+Sitemap: https://sandrabarreto.com.br/sitemap.xml

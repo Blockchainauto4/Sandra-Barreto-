@@ -10,10 +10,10 @@ const Hero: React.FC = () => {
             <div className="absolute inset-0 bg-brand-dark bg-opacity-50"></div>
             <div className="container mx-auto px-6 text-center relative z-10">
                 <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 drop-shadow-lg">
-                    Cuidado, Saúde e Bem-Estar para Seus Pés
+                    Podologia no Campo Belo: Cuidado e Saúde para Seus Pés
                 </h1>
                 <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto drop-shadow-md">
-                    Atendimento especializado em podologia no coração do Campo Belo, com fácil acesso para Moema, Brooklin e Itaim Bibi. Agende sua avaliação e sinta a diferença de um cuidado profissional.
+                    Sua referência em podologia na Zona Sul de SP. Oferecemos atendimento especializado no coração do Campo Belo, com fácil acesso para quem busca uma podóloga em Moema ou o melhor tratamento para os pés no Brooklin. Agende sua avaliação e sinta a diferença.
                 </p>
                 <a
                     href="#agendamento"
