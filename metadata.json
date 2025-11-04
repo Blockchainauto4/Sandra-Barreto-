@@ -1,0 +1,7 @@
+{
+  "name": "Podologia Sandra Barreto",
+  "description": "A professional website for Podiatrist Sandra Barreto, offering services in Campo Belo and nearby regions. The site also features a registration area for other podiatry professionals.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
