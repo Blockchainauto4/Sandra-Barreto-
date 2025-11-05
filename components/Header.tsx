@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { SERVICES_DATA } from '../constants';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+    isAuthenticated: boolean;
+    userName: string | null;
+    onLoginRequest: () => void;
+    onLogout: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ isAuthenticated, userName, onLoginRequest, onLogout }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [activeLink, setActiveLink] = useState('');
     const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -9,6 +16,7 @@ const Header: React.FC = () => {
     const navLinks = [
         { href: "#sobre", label: "Sobre" },
         { href: "#servicos", label: "Serviços" },
+        { href: "#resultados", label: "Resultados" },
         { href: "#blog", label: "Blog" },
         { href: "#carreiras", label: "Carreiras" },
         { href: "#faq", label: "FAQ" },
@@ -32,10 +40,9 @@ const Header: React.FC = () => {
 
     return (
         <header className="bg-brand-light/80 backdrop-blur-md shadow-md sticky top-0 z-50">
-            <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-                <a href="#" className="flex flex-col leading-tight">
-                    <span className="text-2xl font-serif font-bold text-brand-primary">Sandra Barreto</span>
-                    <span className="text-xs text-brand-secondary tracking-widest">PODOLOGIA</span>
+            <div className="container mx-auto px-6 py-2 flex justify-between items-center">
+                <a href="#" className="flex items-center">
+                   <img src="/image-0.jpeg" alt="Logo Sandra Barreto Podologia" className="h-16 w-auto" />
                 </a>
 
                 {/* Desktop Nav */}
@@ -65,9 +72,23 @@ const Header: React.FC = () => {
                             )}
                         </div>
                     ))}
-                    <a href="#agendamento" className="bg-brand-primary text-white px-4 py-2 rounded-full hover:bg-brand-dark transition-transform duration-300 hover:scale-105">
-                        Agendar Consulta
-                    </a>
+                    {isAuthenticated ? (
+                        <div className="relative group">
+                            <button className="flex items-center space-x-1 text-gray-600 hover:text-brand-primary transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" /></svg>
+                                <span>Olá, {userName?.split(' ')[0]}</span>
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+                            </button>
+                            <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                                <a href="#agendamento" className="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-primary">Meus Agendamentos</a>
+                                <button onClick={onLogout} className="w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-primary">Sair</button>
+                            </div>
+                        </div>
+                    ) : (
+                        <button onClick={onLoginRequest} className="bg-brand-primary text-white px-4 py-2 rounded-full hover:bg-brand-dark transition-transform duration-300 hover:scale-105">
+                            Agendar Consulta
+                        </button>
+                    )}
                 </nav>
 
                 {/* Mobile Nav Button */}
@@ -93,9 +114,17 @@ const Header: React.FC = () => {
                                 {link.label}
                             </a>
                         ))}
-                        <a href="#agendamento" className="bg-brand-primary text-white px-6 py-3 rounded-full hover:bg-brand-dark transition-transform duration-300 hover:scale-105" onClick={() => setIsOpen(false)}>
-                            Agendar Consulta
-                        </a>
+                        {isAuthenticated ? (
+                             <div className="text-center space-y-4">
+                                <span className="text-gray-700 font-semibold">Olá, {userName}</span>
+                                <a href="#agendamento" className="block text-gray-600 hover:text-brand-primary" onClick={() => setIsOpen(false)}>Meus Agendamentos</a>
+                                <button onClick={() => { onLogout(); setIsOpen(false); }} className="text-sm bg-brand-accent text-brand-dark px-4 py-2 rounded-full">Sair</button>
+                            </div>
+                        ) : (
+                            <button onClick={() => { onLoginRequest(); setIsOpen(false); }} className="bg-brand-primary text-white px-6 py-3 rounded-full hover:bg-brand-dark transition-transform duration-300 hover:scale-105">
+                                Agendar Consulta
+                            </button>
+                        )}
                     </nav>
                 </div>
             )}

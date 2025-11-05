@@ -1,11 +1,10 @@
-
 import React from 'react';
 
 const Hero: React.FC = () => {
     return (
         <section
             className="relative bg-cover bg-center text-white min-h-[60vh] md:min-h-[80vh] flex items-center"
-            style={{ backgroundImage: "url('https://picsum.photos/1600/900?image=1073')" }}
+            style={{ backgroundImage: "url('/image-1.jpeg')" }}
         >
             <div className="absolute inset-0 bg-brand-dark bg-opacity-50"></div>
             <div className="container mx-auto px-6 text-center relative z-10">

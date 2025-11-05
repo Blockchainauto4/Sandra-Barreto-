@@ -4,6 +4,8 @@ import { Appointment } from '../types';
 interface SchedulingProps {
     appointments: Appointment[];
     onAddAppointment: (appointment: Appointment) => void;
+    isAuthenticated: boolean;
+    onLoginRequest: () => void;
 }
 
 const timeSlots = {
@@ -11,7 +13,7 @@ const timeSlots = {
     saturday: ["09:00", "10:00", "11:00", "12:00"],
 };
 
-const Scheduling: React.FC<SchedulingProps> = ({ appointments, onAddAppointment }) => {
+const Scheduling: React.FC<SchedulingProps> = ({ appointments, onAddAppointment, isAuthenticated, onLoginRequest }) => {
     const [step, setStep] = useState(1);
     const [selectedDate, setSelectedDate] = useState<Date | null>(null);
     const [selectedTime, setSelectedTime] = useState('');
@@ -209,7 +211,7 @@ const Scheduling: React.FC<SchedulingProps> = ({ appointments, onAddAppointment 
                   </div>
                   <div>
                     <h5 className="font-bold">WhatsApp</h5>
-                    <p className="text-gray-600">(11) 98967-1299</p>
+                    <p className="text-gray-600">(11) 95285-1860</p>
                   </div>
                 </div>
                  <div className="flex items-start gap-4">
@@ -230,8 +232,24 @@ const Scheduling: React.FC<SchedulingProps> = ({ appointments, onAddAppointment 
                 </div>
               </div>
               <div className="lg:w-3/5">
-                <div className="bg-gray-50 p-6 rounded-lg min-h-[400px]">
-                    {renderStep()}
+                <div className="bg-gray-50 p-6 rounded-lg min-h-[400px] flex">
+                    {isAuthenticated ? (
+                        renderStep()
+                    ) : (
+                        <div className="flex flex-col items-center justify-center text-center h-full w-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-brand-secondary mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            </svg>
+                            <h4 className="text-xl font-bold text-brand-dark mb-2">Faça login para agendar</h4>
+                            <p className="text-gray-600 mb-6 max-w-sm">Para visualizar os horários disponíveis e agendar sua consulta, você precisa acessar sua conta.</p>
+                            <button 
+                                onClick={onLoginRequest} 
+                                className="bg-brand-primary text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-brand-dark transition-all duration-300 transform hover:scale-105"
+                            >
+                                Entrar ou Cadastrar
+                            </button>
+                        </div>
+                    )}
                 </div>
               </div>
             </div>

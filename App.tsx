@@ -15,24 +15,32 @@ import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
 import CookieConsentBanner from './components/CookieConsentBanner';
 import AdminPage from './components/AdminPage';
-import { BlogPost, Appointment, Job, Client } from './types';
-import { BLOG_POSTS_DATA } from './constants';
+import BeforeAfter from './components/BeforeAfter';
+import LoginModal from './components/LoginModal';
+import { BlogPost, Appointment, Job, Client, BeforeAfterImage } from './types';
+import { BLOG_POSTS_DATA } from './components/constants';
 
 const MainContent: React.FC<{
   posts: BlogPost[];
   appointments: Appointment[];
   jobs: Job[];
   onAddAppointment: (appointment: Appointment) => void;
-}> = ({ posts, appointments, onAddAppointment, jobs }) => (
+  beforeAfterImages: BeforeAfterImage[];
+  isAuthenticated: boolean;
+  onLoginRequest: () => void;
+}> = ({ posts, appointments, onAddAppointment, jobs, beforeAfterImages, isAuthenticated, onLoginRequest }) => (
   <>
     <Hero />
     <About />
     <Services />
+    <BeforeAfter images={beforeAfterImages} />
     <Testimonials />
     <BlogSection posts={posts} />
     <Scheduling 
       appointments={appointments} 
       onAddAppointment={onAddAppointment}
+      isAuthenticated={isAuthenticated}
+      onLoginRequest={onLoginRequest}
     />
     <Careers jobs={jobs} />
     <FAQ />
@@ -44,9 +52,32 @@ const App: React.FC = () => {
   const [posts, setPosts] = useState<BlogPost[]>(BLOG_POSTS_DATA);
   const [appointments, setAppointments] = useState<Appointment[]>([]);
   const [jobs, setJobs] = useState<Job[]>([]);
+  const [beforeAfterData, setBeforeAfterData] = useState<BeforeAfterImage[]>([
+    {
+        id: '1',
+        title: 'Tratamento de Onicocriptose',
+        beforeUrl: '/image-2.jpeg',
+        afterUrl: '/image-3.jpeg',
+    },
+    {
+        id: '2',
+        title: 'Cuidado e Higienização',
+        beforeUrl: '/image-1.jpeg',
+        afterUrl: '/image-4.jpeg',
+    },
+     {
+        id: '3',
+        title: 'Ambiente Clínico',
+        beforeUrl: '/image-5.jpeg',
+        afterUrl: '/image-7.jpeg',
+    },
+  ]);
   const [notification, setNotification] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState('main');
   const [showCookieBanner, setShowCookieBanner] = useState(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [userName, setUserName] = useState<string | null>(null);
 
   useEffect(() => {
     const consent = localStorage.getItem('cookie_consent');
@@ -93,6 +124,15 @@ const App: React.FC = () => {
   const handleAddPost = (newPost: BlogPost) => {
     setPosts(prevPosts => [newPost, ...prevPosts]);
   };
+  
+  const handleAddBeforeAfter = (newCase: Omit<BeforeAfterImage, 'id'>) => {
+    const caseToAdd: BeforeAfterImage = {
+        ...newCase,
+        id: Date.now().toString(),
+    };
+    setBeforeAfterData(prevData => [caseToAdd, ...prevData]);
+    setNotification(`Novo caso "${caseToAdd.title}" adicionado à galeria de resultados!`);
+  };
 
   const handleAddAppointment = (newAppointment: Appointment) => {
     setAppointments(prev => [...prev, newAppointment].sort((a,b) => new Date(a.date).getTime() - new Date(b.date).getTime()));
@@ -119,6 +159,25 @@ const App: React.FC = () => {
     setShowCookieBanner(false);
   };
 
+  const handleLoginRequest = () => setIsLoginModalOpen(true);
+
+  const handleLoginSuccess = (provider: 'Google' | 'Facebook') => {
+      setIsAuthenticated(true);
+      setIsLoginModalOpen(false);
+      const name = provider === 'Google' ? 'Maria G.' : 'João S.';
+      setUserName(name);
+      setNotification(`Login com ${provider} realizado com sucesso! Bem-vindo(a), ${name}.`);
+      setTimeout(() => {
+          document.getElementById('agendamento')?.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
+  };
+  
+  const handleLogout = () => {
+      setIsAuthenticated(false);
+      setUserName(null);
+      setNotification('Você foi desconectado.');
+  };
+
   const renderCurrentPage = () => {
     switch (currentPage) {
         case 'privacy-policy':
@@ -130,6 +189,7 @@ const App: React.FC = () => {
                       clients={clients}
                       onAddJob={handleAddJob}
                       onAddPost={handleAddPost}
+                      onAddBeforeAfter={handleAddBeforeAfter}
                     />;
         default:
             return <MainContent 
@@ -137,13 +197,21 @@ const App: React.FC = () => {
                       appointments={appointments}
                       jobs={jobs}
                       onAddAppointment={handleAddAppointment}
+                      beforeAfterImages={beforeAfterData}
+                      isAuthenticated={isAuthenticated}
+                      onLoginRequest={handleLoginRequest}
                     />;
     }
   }
 
   return (
     <div className="bg-brand-light font-sans text-brand-dark">
-      <Header />
+      <Header 
+        isAuthenticated={isAuthenticated}
+        userName={userName}
+        onLoginRequest={handleLoginRequest}
+        onLogout={handleLogout}
+      />
       <main>
         {renderCurrentPage()}
       </main>
@@ -151,6 +219,11 @@ const App: React.FC = () => {
       <WhatsAppButton />
       <Notification message={notification} onClose={handleCloseNotification} />
       {showCookieBanner && <CookieConsentBanner onAccept={handleAcceptCookies} />}
+      <LoginModal 
+        isOpen={isLoginModalOpen}
+        onClose={() => setIsLoginModalOpen(false)}
+        onLoginSuccess={handleLoginSuccess}
+      />
     </div>
   );
 };

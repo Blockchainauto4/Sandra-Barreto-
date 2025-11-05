@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const About: React.FC = () => {
@@ -8,8 +7,8 @@ const About: React.FC = () => {
                 <div className="flex flex-col md:flex-row items-center gap-12">
                     <div className="md:w-1/2">
                         <img
-                            src="https://picsum.photos/600/700?image=349"
-                            alt="Podóloga Sandra Barreto"
+                            src="/image-6.jpeg"
+                            alt="Sandra Barreto, podóloga especialista, em seu consultório no Campo Belo"
                             className="rounded-lg shadow-2xl w-full h-auto object-cover"
                         />
                     </div>

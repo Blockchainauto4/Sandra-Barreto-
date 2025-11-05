@@ -1,10 +1,14 @@
-
 import React from 'react';
 import { SERVICES_DATA } from '../constants';
 
 const Services: React.FC = () => {
     return (
-        <section id="servicos" className="py-20 bg-brand-light">
+        <section id="servicos" className="py-20 relative overflow-hidden">
+            <div className="absolute inset-0 -z-20">
+                <img src="/image-4.jpeg" alt="Fundo de tratamento de podologia" className="w-full h-full object-cover" />
+            </div>
+            <div className="absolute inset-0 bg-brand-light/95 -z-10"></div>
+
             <div className="container mx-auto px-6">
                 <div className="text-center mb-12">
                     <h2 className="text-sm font-semibold text-brand-primary uppercase tracking-wider mb-2">

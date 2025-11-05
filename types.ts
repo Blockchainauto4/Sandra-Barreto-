@@ -51,3 +51,10 @@ export interface Client {
   email: string;
   appointments: Appointment[];
 }
+
+export interface BeforeAfterImage {
+  id: string;
+  title: string;
+  beforeUrl: string;
+  afterUrl: string;
+}

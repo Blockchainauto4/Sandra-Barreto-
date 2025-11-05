@@ -113,21 +113,26 @@ const Testimonials: React.FC = () => {
                     </div>
                 )}
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {reviews.map((review, index) => (
-                        <div key={index} className="bg-brand-light p-6 rounded-lg shadow-md flex flex-col">
-                           <div className="flex items-center justify-between mb-4">
-                                <div>
-                                    <p className="font-bold text-brand-dark">{review.author}</p>
-                                    {review.date && <p className="text-xs text-brand-primary">{review.date}</p>}
-                                </div>
-                                <StarRating rating={review.rating} />
-                           </div>
-                            <p className="text-gray-600 italic flex-grow">
-                                "{review.quote}"
-                            </p>
-                        </div>
-                    ))}
+                <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 items-start mt-12">
+                    <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                        {reviews.map((review, index) => (
+                            <div key={index} className="bg-brand-light p-6 rounded-lg shadow-md flex flex-col h-full">
+                               <div className="flex items-center justify-between mb-4">
+                                    <div>
+                                        <p className="font-bold text-brand-dark">{review.author}</p>
+                                        {review.date && <p className="text-xs text-brand-primary">{review.date}</p>}
+                                    </div>
+                                    <StarRating rating={review.rating} />
+                               </div>
+                                <p className="text-gray-600 italic flex-grow">
+                                    "{review.quote}"
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="lg:col-span-2 hidden lg:block">
+                        <img src="/image-7.jpeg" alt="Consultório de Podologia Sandra Barreto" className="rounded-lg shadow-xl w-full h-auto object-cover sticky top-28" />
+                    </div>
                 </div>
             </div>
         </section>

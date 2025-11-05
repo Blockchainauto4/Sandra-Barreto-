@@ -1,15 +1,17 @@
 import React from 'react';
-import { BlogPost, Client, Job } from '../types';
+import { BlogPost, Client, Job, BeforeAfterImage } from '../types';
 import CreatePost from './CreatePost';
 import ManagementPanel from './ManagementPanel';
+import UploadBeforeAfter from './UploadBeforeAfter';
 
 interface AdminPageProps {
     clients: Client[];
     onAddJob: (job: Omit<Job, 'id' | 'datePosted'>) => void;
     onAddPost: (post: BlogPost) => void;
+    onAddBeforeAfter: (newCase: Omit<BeforeAfterImage, 'id'>) => void;
 }
 
-const AdminPage: React.FC<AdminPageProps> = ({ clients, onAddJob, onAddPost }) => {
+const AdminPage: React.FC<AdminPageProps> = ({ clients, onAddJob, onAddPost, onAddBeforeAfter }) => {
     return (
         <div className="bg-brand-light">
             <div className="container mx-auto px-6 py-16">
@@ -23,6 +25,11 @@ const AdminPage: React.FC<AdminPageProps> = ({ clients, onAddJob, onAddPost }) =
                 {/* Create Post Section */}
                 <div className="mb-16">
                     <CreatePost onAddPost={onAddPost} />
+                </div>
+
+                {/* Upload Before/After Section */}
+                <div className="mb-16">
+                    <UploadBeforeAfter onAdd={onAddBeforeAfter} />
                 </div>
 
                 {/* Management Panel Section */}
