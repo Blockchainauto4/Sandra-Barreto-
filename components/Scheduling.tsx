@@ -1,11 +1,10 @@
 import React, { useState, useMemo } from 'react';
 import { Appointment } from '../types';
+import { SERVICES_DATA } from '../constants';
 
 interface SchedulingProps {
     appointments: Appointment[];
     onAddAppointment: (appointment: Appointment) => void;
-    isAuthenticated: boolean;
-    onLoginRequest: () => void;
 }
 
 const timeSlots = {
@@ -13,14 +12,13 @@ const timeSlots = {
     saturday: ["09:00", "10:00", "11:00", "12:00"],
 };
 
-const Scheduling: React.FC<SchedulingProps> = ({ appointments, onAddAppointment, isAuthenticated, onLoginRequest }) => {
+const Scheduling: React.FC<SchedulingProps> = ({ appointments, onAddAppointment }) => {
     const [step, setStep] = useState(1);
+    const [selectedService, setSelectedService] = useState('');
     const [selectedDate, setSelectedDate] = useState<Date | null>(null);
     const [selectedTime, setSelectedTime] = useState('');
     const [clientDetails, setClientDetails] = useState({ name: '', phone: '', email: '' });
     const [currentMonth, setCurrentMonth] = useState(new Date());
-
-    const serviceName = "Consulta de Podologia";
 
     const bookedSlots = useMemo(() => {
         if (!selectedDate) return new Set();
@@ -44,10 +42,10 @@ const Scheduling: React.FC<SchedulingProps> = ({ appointments, onAddAppointment,
     
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        if(selectedDate && selectedTime && clientDetails.name && clientDetails.phone) {
+        if(selectedService && selectedDate && selectedTime && clientDetails.name && clientDetails.phone) {
             const newAppointment: Appointment = {
                 id: Date.now().toString(),
-                service: serviceName,
+                service: selectedService,
                 date: selectedDate.toISOString().split('T')[0],
                 time: selectedTime,
                 clientName: clientDetails.name,
@@ -55,7 +53,7 @@ const Scheduling: React.FC<SchedulingProps> = ({ appointments, onAddAppointment,
                 clientEmail: clientDetails.email,
             };
             onAddAppointment(newAppointment);
-            setStep(3); // Confirmation step
+            setStep(4); // Confirmation step
         }
     };
     
@@ -142,16 +140,30 @@ const Scheduling: React.FC<SchedulingProps> = ({ appointments, onAddAppointment,
             case 1:
                 return (
                     <div>
-                        <h3 className="text-xl font-bold mb-4">1. Escolha Data e Hora</h3>
+                        <h3 className="text-xl font-bold mb-4">1. Escolha o Serviço</h3>
+                        <div className="space-y-2">
+                            {SERVICES_DATA.map(s => (
+                                <button key={s.title} onClick={() => { setSelectedService(s.title); handleNextStep(); }} className="w-full text-left p-4 border rounded-lg hover:bg-brand-secondary transition-colors">
+                                    {s.title}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                );
+            case 2:
+                return (
+                    <div>
+                        <h3 className="text-xl font-bold mb-4">2. Escolha Data e Hora</h3>
+                        <p className="mb-2">Serviço: <span className="font-semibold">{selectedService}</span></p>
                         {renderCalendar()}
                         {selectedDate && renderTimeSlots()}
                     </div>
                 );
-            case 2:
+            case 3:
                  return (
                     <div>
-                        <h3 className="text-xl font-bold mb-4">2. Seus Dados</h3>
-                        <p className="mb-4">Você está agendando uma <span className="font-semibold">{serviceName}</span> para <span className="font-semibold">{selectedDate?.toLocaleDateString('pt-BR')}</span> às <span className="font-semibold">{selectedTime}</span>.</p>
+                        <h3 className="text-xl font-bold mb-4">3. Seus Dados</h3>
+                        <p className="mb-4">Você está agendando <span className="font-semibold">{selectedService}</span> para <span className="font-semibold">{selectedDate?.toLocaleDateString('pt-BR')}</span> às <span className="font-semibold">{selectedTime}</span>.</p>
                         <form onSubmit={handleSubmit} className="space-y-4">
                              <div>
                                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">Nome Completo</label>
@@ -169,13 +181,13 @@ const Scheduling: React.FC<SchedulingProps> = ({ appointments, onAddAppointment,
                         </form>
                     </div>
                 );
-            case 3:
+            case 4:
                 return (
                     <div className="text-center">
                          <h3 className="text-2xl font-bold text-brand-primary mb-4">Obrigado!</h3>
-                         <p className="text-gray-700">Seu agendamento para uma <span className="font-semibold">{serviceName}</span> em <span className="font-semibold">{selectedDate?.toLocaleDateString('pt-BR')} às {selectedTime}</span> foi solicitado.</p>
+                         <p className="text-gray-700">Seu agendamento para <span className="font-semibold">{selectedService}</span> em <span className="font-semibold">{selectedDate?.toLocaleDateString('pt-BR')} às {selectedTime}</span> foi solicitado.</p>
                          <p className="mt-2 text-gray-600">Entraremos em contato em breve pelo telefone para confirmar. Obrigado por sua preferência!</p>
-                         <button onClick={() => { setStep(1); setSelectedDate(null); setSelectedTime(''); setClientDetails({name:'',phone:'',email:''})}} className="mt-6 bg-brand-secondary text-brand-dark font-bold py-2 px-6 rounded-full hover:bg-opacity-80">Fazer Novo Agendamento</button>
+                         <button onClick={() => { setStep(1); setSelectedDate(null); setSelectedService(''); setSelectedTime(''); setClientDetails({name:'',phone:'',email:''})}} className="mt-6 bg-brand-secondary text-brand-dark font-bold py-2 px-6 rounded-full hover:bg-opacity-80">Fazer Novo Agendamento</button>
                     </div>
                 );
         }
@@ -211,7 +223,7 @@ const Scheduling: React.FC<SchedulingProps> = ({ appointments, onAddAppointment,
                   </div>
                   <div>
                     <h5 className="font-bold">WhatsApp</h5>
-                    <p className="text-gray-600">(11) 95285-1860</p>
+                    <p className="text-gray-600">(11) 98967-1299</p>
                   </div>
                 </div>
                  <div className="flex items-start gap-4">
@@ -232,24 +244,8 @@ const Scheduling: React.FC<SchedulingProps> = ({ appointments, onAddAppointment,
                 </div>
               </div>
               <div className="lg:w-3/5">
-                <div className="bg-gray-50 p-6 rounded-lg min-h-[400px] flex">
-                    {isAuthenticated ? (
-                        renderStep()
-                    ) : (
-                        <div className="flex flex-col items-center justify-center text-center h-full w-full">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-brand-secondary mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                            </svg>
-                            <h4 className="text-xl font-bold text-brand-dark mb-2">Faça login para agendar</h4>
-                            <p className="text-gray-600 mb-6 max-w-sm">Para visualizar os horários disponíveis e agendar sua consulta, você precisa acessar sua conta.</p>
-                            <button 
-                                onClick={onLoginRequest} 
-                                className="bg-brand-primary text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-brand-dark transition-all duration-300 transform hover:scale-105"
-                            >
-                                Entrar ou Cadastrar
-                            </button>
-                        </div>
-                    )}
+                <div className="bg-gray-50 p-6 rounded-lg min-h-[400px]">
+                    {renderStep()}
                 </div>
               </div>
             </div>

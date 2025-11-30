@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { GoogleGenAI } from "@google/genai";
 import { BlogPost } from '../types';
@@ -106,94 +107,68 @@ const CreatePost: React.FC<CreatePostProps> = ({ onAddPost }) => {
                 <div className="bg-brand-light p-8 rounded-lg shadow-xl">
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div>
-                            <label htmlFor="postTitle" className="block text-lg font-medium text-gray-700 mb-2">
-                                1. Título do Post
-                            </label>
+                            <label htmlFor="title" className="block text-lg font-medium text-gray-700 mb-2">1. Título do Post</label>
                             <input
                                 type="text"
-                                id="postTitle"
+                                id="title"
                                 value={title}
                                 onChange={(e) => setTitle(e.target.value)}
-                                placeholder="Ex: Como cuidar dos pés diabéticos"
+                                placeholder="Ex: Como cuidar de unhas encravadas"
                                 className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-primary focus:border-brand-primary"
+                                disabled={isLoading}
                             />
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-end">
-                            <div>
-                                <label htmlFor="postContent" className="block text-lg font-medium text-gray-700 mb-2">
-                                    2. Conteúdo do Post
-                                </label>
-                                <textarea
-                                    id="postContent"
-                                    value={content}
-                                    onChange={(e) => setContent(e.target.value)}
-                                    rows={10}
-                                    className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-primary focus:border-brand-primary"
-                                    placeholder="Clique em 'Gerar Conteúdo com IA' ou escreva manualmente aqui..."
-                                ></textarea>
-                            </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <button
                                 type="button"
                                 onClick={handleGenerateContent}
-                                disabled={isGeneratingContent || !title}
-                                className="bg-brand-primary text-white font-bold py-3 px-4 rounded-md hover:bg-brand-dark transition-colors duration-300 disabled:bg-gray-400 flex items-center justify-center"
+                                disabled={isLoading}
+                                className="w-full bg-brand-primary text-white font-bold py-3 px-4 rounded-md hover:bg-brand-dark transition-colors duration-300 disabled:bg-gray-400 flex items-center justify-center"
                             >
                                 {isGeneratingContent ? (
-                                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                                    </svg>
-                                ) : (
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                                        <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
-                                        <path fillRule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clipRule="evenodd" />
-                                    </svg>
-                                )}
-                                {isGeneratingContent ? 'Gerando...' : 'Gerar Conteúdo com IA'}
+                                    <> <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Gerando Conteúdo... </>
+                                ) : '2. Gerar Conteúdo com IA'}
                             </button>
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
-                            <div>
-                                <label className="block text-lg font-medium text-gray-700 mb-2">3. Imagem do Post</label>
-                                {imageUrl ? (
-                                    <img src={imageUrl} alt="Pré-visualização da imagem gerada" className="w-full h-40 object-cover rounded-md shadow-md" />
-                                ) : (
-                                    <div className="w-full h-40 bg-gray-200 rounded-md flex items-center justify-center text-gray-500">
-                                        A imagem gerada aparecerá aqui
-                                    </div>
-                                )}
-                            </div>
-                            <button
+                             <button
                                 type="button"
                                 onClick={handleGenerateImage}
-                                disabled={isGeneratingImage || !title}
-                                className="bg-brand-secondary text-brand-dark font-bold py-3 px-4 rounded-md hover:bg-opacity-80 transition-colors duration-300 disabled:bg-gray-400 flex items-center justify-center"
+                                disabled={isLoading}
+                                className="w-full bg-brand-secondary text-brand-dark font-bold py-3 px-4 rounded-md hover:bg-opacity-80 transition-colors duration-300 disabled:bg-gray-400 flex items-center justify-center"
                             >
-                                {isGeneratingImage ? (
-                                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-brand-dark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                                    </svg>
-                                ) : (
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
-                                    </svg>
-                                )}
-                                {isGeneratingImage ? 'Gerando...' : 'Gerar Imagem com IA'}
+                               {isGeneratingImage ? (
+                                    <> <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-brand-dark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Criando Imagem... </>
+                                ) : '3. Gerar Imagem com IA'}
                             </button>
+                        </div>
+                        
+                        <div>
+                           <label htmlFor="content" className="block text-lg font-medium text-gray-700 mb-2">Prévia do Post</label>
+                            <textarea
+                                id="content"
+                                value={content}
+                                onChange={(e) => setContent(e.target.value)}
+                                rows={8}
+                                className="w-full p-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-primary focus:border-brand-primary"
+                                placeholder="O conteúdo gerado pela IA aparecerá aqui..."
+                                disabled={isLoading}
+                            />
                         </div>
 
-                        <div className="pt-6 border-t border-gray-300">
-                            <button
-                                type="submit"
-                                disabled={isLoading || !title || !content || !imageUrl}
-                                className="w-full bg-green-500 text-white font-bold py-4 px-4 rounded-md text-lg hover:bg-green-600 transition-colors duration-300 disabled:bg-gray-400"
-                            >
-                                {isLoading ? 'Aguarde...' : 'Publicar Post no Blog'}
-                            </button>
-                        </div>
+                         {imageUrl && (
+                            <div>
+                                <label className="block text-lg font-medium text-gray-700 mb-2">Imagem Gerada</label>
+                                <img src={imageUrl} alt="Imagem gerada pela IA para o post" className="rounded-md shadow-lg w-full h-auto object-cover" />
+                            </div>
+                        )}
+
+                        <button
+                            type="submit"
+                            disabled={isLoading}
+                            className="w-full bg-green-500 text-white font-bold py-4 px-4 rounded-md text-lg hover:bg-green-600 transition-colors duration-300 disabled:bg-gray-400"
+                        >
+                            4. Publicar Post
+                        </button>
                     </form>
                 </div>
             </div>

@@ -36,25 +36,3 @@ export interface Appointment {
   clientContact: string;
   clientEmail: string;
 }
-
-export interface Job {
-  id: string;
-  title: string;
-  description: string;
-  type: string; // e.g., "Full-time", "Part-time"
-  datePosted: string;
-}
-
-export interface Client {
-  name: string;
-  contact: string;
-  email: string;
-  appointments: Appointment[];
-}
-
-export interface BeforeAfterImage {
-  id: string;
-  title: string;
-  beforeUrl: string;
-  afterUrl: string;
-}

@@ -117,7 +117,7 @@ export const BLOG_POSTS_DATA: BlogPost[] = [
         id: '1',
         title: 'Pés Saudáveis no Verão: Dicas da sua Podóloga no Campo Belo',
         content: 'O verão é uma estação que exige cuidados redobrados com os pés. O uso constante de calçados abertos, o contato com areia e a umidade podem causar problemas. Por isso, separamos 5 dicas essenciais para você curtir a estação sem preocupações: hidrate diariamente, use protetor solar, seque bem os pés, escolha calçados confortáveis e, claro, visite seu podólogo regularmente. Se você está na Zona Sul de SP, especialmente no Campo Belo, Moema ou Brooklin, agende uma avaliação e garanta que seus pés estejam prontos para aproveitar o melhor do verão!',
-        imageUrl: 'https://images.unsplash.com/photo-1522338140262-f46399516618?q=80&w=800&h=600&auto=format&fit=crop',
+        imageUrl: 'https://picsum.photos/seed/summerfeet/800/600',
         date: '15 de Julho, 2024',
         excerpt: 'O verão chegou na Zona Sul de SP! Se você mora no Campo Belo, Moema ou Brooklin, descubra 5 dicas essenciais para manter a saúde dos seus pés...'
     },
@@ -125,7 +125,7 @@ export const BLOG_POSTS_DATA: BlogPost[] = [
         id: '2',
         title: 'Podologia Esportiva no Brooklin e Região: Como Evitar Lesões',
         content: 'Para atletas, os pés são a base de tudo. Impactos constantes, atrito e transpiração excessiva podem levar a lesões, bolhas, calos e problemas nas unhas. A podologia preventiva atua diretamente na minimização desses riscos. Se você pratica esportes e está na região do Brooklin, Campo Belo ou Itaim Bibi, investir na saúde dos seus pés é investir na sua performance. Entre em contato e saiba como podemos ajudar você a alcançar seus objetivos com segurança e conforto.',
-        imageUrl: 'https://images.unsplash.com/photo-1571019614242-c5c5792c4b04?q=80&w=800&h=600&auto=format&fit=crop',
+        imageUrl: 'https://picsum.photos/seed/athletefoot/800/600',
         date: '28 de Junho, 2024',
         excerpt: 'Para atletas do Brooklin, Campo Belo e Itaim Bibi, os pés são a base de tudo. Entenda como a podologia preventiva pode otimizar sua performance...'
     }
