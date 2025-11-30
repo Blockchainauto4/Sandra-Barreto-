@@ -51,8 +51,9 @@ const Footer: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <div className="mt-8 border-t border-gray-700 pt-4 text-center text-sm text-brand-secondary">
+                <div className="mt-8 border-t border-gray-700 pt-4 text-center text-sm text-brand-secondary flex flex-col items-center gap-2">
                     <p>&copy; {new Date().getFullYear()} Sandra Barreto Podologia. Todos os direitos reservados.</p>
+                    <a href="#admin" className="text-xs text-brand-secondary/30 hover:text-brand-secondary transition-colors">Admin</a>
                 </div>
             </div>
         </footer>

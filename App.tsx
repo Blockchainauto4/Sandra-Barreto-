@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -15,6 +16,7 @@ import Notification from './components/Notification';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
 import CookieConsentBanner from './components/CookieConsentBanner';
+import AdminDashboard from './components/AdminDashboard';
 import { BlogPost, Appointment } from './types';
 import { BLOG_POSTS_DATA } from './constants';
 
@@ -56,7 +58,7 @@ const App: React.FC = () => {
     
     const handleHashChange = () => {
         const hash = window.location.hash.replace('#', '');
-        if (hash === 'privacy-policy' || hash === 'terms-of-service') {
+        if (hash === 'privacy-policy' || hash === 'terms-of-service' || hash === 'admin') {
             setCurrentPage(hash);
             window.scrollTo(0, 0);
         } else if (hash === '') {
@@ -98,6 +100,8 @@ const App: React.FC = () => {
             return <PrivacyPolicy />;
         case 'terms-of-service':
             return <TermsOfService />;
+        case 'admin':
+            return <AdminDashboard />;
         default:
             return <MainContent 
                       posts={posts} 
@@ -108,16 +112,19 @@ const App: React.FC = () => {
     }
   }
 
+  // Determine if we should show the standard public layout (Header, Footer, Floating Buttons)
+  const isFullPageLayout = currentPage === 'admin';
+
   return (
     <div className="bg-brand-light font-sans text-brand-dark">
-      <Header />
-      <main>
+      {!isFullPageLayout && <Header />}
+      <main className={isFullPageLayout ? "min-h-screen" : ""}>
         {renderCurrentPage()}
       </main>
-      <Footer />
-      <WhatsAppButton />
-      <Notification message={notification} onClose={handleCloseNotification} />
-      {showCookieBanner && <CookieConsentBanner onAccept={handleAcceptCookies} />}
+      {!isFullPageLayout && <Footer />}
+      {!isFullPageLayout && <WhatsAppButton />}
+      {!isFullPageLayout && <Notification message={notification} onClose={handleCloseNotification} />}
+      {!isFullPageLayout && showCookieBanner && <CookieConsentBanner onAccept={handleAcceptCookies} />}
     </div>
   );
 };
