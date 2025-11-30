@@ -81,6 +81,8 @@ const CreatePost: React.FC<CreatePostProps> = ({ onAddPost }) => {
                 imageUrl,
                 date: new Date().toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' }),
                 excerpt: content.substring(0, 150) + '...',
+                author: 'Sandra Barreto',
+                authorRole: 'Podóloga Especialista'
             };
             onAddPost(newPost);
             setTitle('');

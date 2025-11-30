@@ -25,6 +25,8 @@ export interface BlogPost {
   imageUrl: string;
   date: string;
   excerpt: string;
+  author?: string;
+  authorRole?: string;
 }
 
 export interface Appointment {
