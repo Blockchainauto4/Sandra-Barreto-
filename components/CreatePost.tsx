@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { GoogleGenAI } from "@google/genai";
+// import { GoogleGenAI } from "@google/genai"; // Removed static import to save bundle size
 import { BlogPost } from '../types';
 
 interface CreatePostProps {
@@ -21,6 +21,9 @@ const CreatePost: React.FC<CreatePostProps> = ({ onAddPost }) => {
         }
         setIsGeneratingContent(true);
         try {
+            // Dynamically import the SDK only when needed
+            const { GoogleGenAI } = await import("@google/genai");
+            
             const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
             const prompt = `Escreva um post de blog informativo e otimizado para SEO local para um site de podologia. O tópico principal é "${title}". O texto deve ser útil para o público geral, com tom profissional e amigável, entre 200 e 300 palavras. Crucial: Incorpore naturalmente os seguintes termos e locais ao longo do texto: 'podologia no Campo Belo', 'podóloga em Moema', 'tratamento para pés no Brooklin', e 'saúde dos pés na Zona Sul de SP'. A chamada para ação final deve ser clara, incentivando o agendamento de uma consulta com a podóloga Sandra Barreto, destacando a conveniência para moradores do Campo Belo e regiões próximas como Moema e Brooklin.`;
             
@@ -46,6 +49,9 @@ const CreatePost: React.FC<CreatePostProps> = ({ onAddPost }) => {
         }
         setIsGeneratingImage(true);
         try {
+             // Dynamically import the SDK only when needed
+             const { GoogleGenAI } = await import("@google/genai");
+             
              const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
              const prompt = `Uma imagem profissional e limpa para um post de blog sobre podologia com o tema "${title}". Estilo: fotorealista, clínico, sereno, focado em pés saudáveis ou equipamentos de podologia.`;
              

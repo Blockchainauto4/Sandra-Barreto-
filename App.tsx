@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -13,12 +13,20 @@ import WhatsAppButton from './components/WhatsAppButton';
 import CreatePost from './components/CreatePost';
 import BlogSection from './components/BlogSection';
 import Notification from './components/Notification';
-import PrivacyPolicy from './components/PrivacyPolicy';
-import TermsOfService from './components/TermsOfService';
 import CookieConsentBanner from './components/CookieConsentBanner';
-import AdminDashboard from './components/AdminDashboard';
 import { BlogPost, Appointment } from './types';
 import { BLOG_POSTS_DATA } from './constants';
+
+// Lazy load heavy or secondary components
+const AdminDashboard = React.lazy(() => import('./components/AdminDashboard'));
+const PrivacyPolicy = React.lazy(() => import('./components/PrivacyPolicy'));
+const TermsOfService = React.lazy(() => import('./components/TermsOfService'));
+
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-brand-light">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-brand-primary"></div>
+  </div>
+);
 
 const MainContent: React.FC<{
   posts: BlogPost[];
@@ -120,7 +128,9 @@ const App: React.FC = () => {
     <div className="bg-brand-light font-sans text-brand-dark">
       {!isFullPageLayout && <Header />}
       <main className={isFullPageLayout ? "min-h-screen" : ""}>
-        {renderCurrentPage()}
+        <Suspense fallback={<PageLoader />}>
+            {renderCurrentPage()}
+        </Suspense>
       </main>
       {!isFullPageLayout && <Footer />}
       {!isFullPageLayout && <WhatsAppButton />}
