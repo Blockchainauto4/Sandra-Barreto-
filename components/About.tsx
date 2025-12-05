@@ -18,6 +18,7 @@ const About: React.FC = () => {
                             className="rounded-lg shadow-2xl w-full h-auto object-cover"
                             width="600"
                             height="700"
+                            loading="lazy"
                         />
                     </div>
                     <div className="md:w-1/2">

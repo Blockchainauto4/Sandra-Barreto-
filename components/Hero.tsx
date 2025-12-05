@@ -12,6 +12,7 @@ const Hero: React.FC = () => {
                 className="absolute inset-0 w-full h-full object-cover -z-10"
                 width="1600"
                 height="900"
+                loading="eager"
                 // @ts-ignore
                 fetchPriority="high"
             />

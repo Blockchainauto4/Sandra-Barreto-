@@ -30,6 +30,7 @@ const BlogSection: React.FC<BlogSectionProps> = ({ posts }) => {
                                     className="w-full h-48 object-cover"
                                     width="400"
                                     height="300"
+                                    loading="lazy"
                                 />
                                 <div className="p-6 flex flex-col flex-grow">
                                     <div className="flex justify-between items-center mb-2">
