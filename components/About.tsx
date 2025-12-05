@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const About: React.FC = () => {
@@ -19,6 +18,7 @@ const About: React.FC = () => {
                             width="600"
                             height="700"
                             loading="lazy"
+                            fetchPriority="low"
                         />
                     </div>
                     <div className="md:w-1/2">

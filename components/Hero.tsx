@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const Hero: React.FC = () => {
@@ -13,7 +12,6 @@ const Hero: React.FC = () => {
                 width="1600"
                 height="900"
                 loading="eager"
-                // @ts-ignore
                 fetchPriority="high"
             />
             <div className="absolute inset-0 bg-brand-dark bg-opacity-50 -z-10"></div>

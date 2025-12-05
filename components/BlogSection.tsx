@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { BlogPost } from '../types';
 
@@ -31,6 +30,7 @@ const BlogSection: React.FC<BlogSectionProps> = ({ posts }) => {
                                     width="400"
                                     height="300"
                                     loading="lazy"
+                                    fetchPriority="low"
                                 />
                                 <div className="p-6 flex flex-col flex-grow">
                                     <div className="flex justify-between items-center mb-2">
