@@ -1,23 +1,24 @@
-
 import React, { useState, useEffect, Suspense } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import Testimonials from './components/Testimonials';
-import ProfessionalRegistration from './components/ProfessionalRegistration';
-import FAQ from './components/FAQ';
-import Scheduling from './components/Scheduling';
-import Footer from './components/Footer';
-import WhatsAppButton from './components/WhatsAppButton';
-import CreatePost from './components/CreatePost';
-import BlogSection from './components/BlogSection';
-import Notification from './components/Notification';
-import CookieConsentBanner from './components/CookieConsentBanner';
 import { BlogPost, Appointment } from './types';
 import { BLOG_POSTS_DATA } from './constants';
 
-// Lazy load heavy or secondary components
+// Lazy load heavy or secondary components (Below the fold)
+const About = React.lazy(() => import('./components/About'));
+const Services = React.lazy(() => import('./components/Services'));
+const Testimonials = React.lazy(() => import('./components/Testimonials'));
+const ProfessionalRegistration = React.lazy(() => import('./components/ProfessionalRegistration'));
+const FAQ = React.lazy(() => import('./components/FAQ'));
+const Scheduling = React.lazy(() => import('./components/Scheduling'));
+const Footer = React.lazy(() => import('./components/Footer'));
+const WhatsAppButton = React.lazy(() => import('./components/WhatsAppButton'));
+const CreatePost = React.lazy(() => import('./components/CreatePost'));
+const BlogSection = React.lazy(() => import('./components/BlogSection'));
+const Notification = React.lazy(() => import('./components/Notification'));
+const CookieConsentBanner = React.lazy(() => import('./components/CookieConsentBanner'));
+
+// Lazy load Pages
 const AdminDashboard = React.lazy(() => import('./components/AdminDashboard'));
 const PrivacyPolicy = React.lazy(() => import('./components/PrivacyPolicy'));
 const TermsOfService = React.lazy(() => import('./components/TermsOfService'));
@@ -28,6 +29,12 @@ const PageLoader = () => (
   </div>
 );
 
+const SectionLoader = () => (
+    <div className="py-20 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-brand-primary"></div>
+    </div>
+);
+
 const MainContent: React.FC<{
   posts: BlogPost[];
   appointments: Appointment[];
@@ -35,18 +42,23 @@ const MainContent: React.FC<{
   onAddAppointment: (appointment: Appointment) => void;
 }> = ({ posts, appointments, onAddPost, onAddAppointment }) => (
   <>
+    {/* Hero is Eager loaded to ensure fastest LCP */}
     <Hero />
-    <About />
-    <Services />
-    <Testimonials />
-    <CreatePost onAddPost={onAddPost} />
-    <BlogSection posts={posts} />
-    <Scheduling 
-      appointments={appointments} 
-      onAddAppointment={onAddAppointment}
-    />
-    <ProfessionalRegistration />
-    <FAQ />
+    
+    {/* Below the fold content is lazy loaded */}
+    <Suspense fallback={<SectionLoader />}>
+        <About />
+        <Services />
+        <Testimonials />
+        <CreatePost onAddPost={onAddPost} />
+        <BlogSection posts={posts} />
+        <Scheduling 
+        appointments={appointments} 
+        onAddAppointment={onAddAppointment}
+        />
+        <ProfessionalRegistration />
+        <FAQ />
+    </Suspense>
   </>
 );
 
@@ -132,10 +144,20 @@ const App: React.FC = () => {
             {renderCurrentPage()}
         </Suspense>
       </main>
-      {!isFullPageLayout && <Footer />}
-      {!isFullPageLayout && <WhatsAppButton />}
-      {!isFullPageLayout && <Notification message={notification} onClose={handleCloseNotification} />}
-      {!isFullPageLayout && showCookieBanner && <CookieConsentBanner onAccept={handleAcceptCookies} />}
+      
+      {!isFullPageLayout && (
+          <Suspense fallback={null}>
+             <Footer />
+          </Suspense>
+      )}
+
+      {!isFullPageLayout && (
+          <Suspense fallback={null}>
+            <WhatsAppButton />
+            <Notification message={notification} onClose={handleCloseNotification} />
+            {showCookieBanner && <CookieConsentBanner onAccept={handleAcceptCookies} />}
+          </Suspense>
+      )}
     </div>
   );
 };
