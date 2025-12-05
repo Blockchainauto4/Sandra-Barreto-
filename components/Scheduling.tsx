@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo } from 'react';
 import { Appointment } from '../types';
 import { SERVICES_DATA } from '../constants';
@@ -8,7 +9,7 @@ interface SchedulingProps {
 }
 
 const timeSlots = {
-    week: ["09:00", "10:00", "11:00", "12:00", "14:00", "15:00", "16:00", "17:00"],
+    week: ["09:00", "10:00", "11:00", "12:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"],
     saturday: ["09:00", "10:00", "11:00", "12:00"],
 };
 
@@ -214,7 +215,7 @@ const Scheduling: React.FC<SchedulingProps> = ({ appointments, onAddAppointment 
                   </div>
                   <div>
                     <h5 className="font-bold">Endereço</h5>
-                    <p className="text-gray-600">R. Dr. Jesuíno Maciel, 1205<br/>Campo Belo, São Paulo - SP</p>
+                    <p className="text-gray-600">R. Vieira de Morais, 1466<br/>Campo Belo, São Paulo - SP</p>
                   </div>
                 </div>
                  <div className="flex items-start gap-4">
@@ -223,7 +224,7 @@ const Scheduling: React.FC<SchedulingProps> = ({ appointments, onAddAppointment 
                   </div>
                   <div>
                     <h5 className="font-bold">WhatsApp</h5>
-                    <p className="text-gray-600">(11) 98967-1299</p>
+                    <p className="text-gray-600">(11) 95285-1860</p>
                   </div>
                 </div>
                  <div className="flex items-start gap-4">
@@ -232,12 +233,12 @@ const Scheduling: React.FC<SchedulingProps> = ({ appointments, onAddAppointment 
                   </div>
                   <div>
                     <h5 className="font-bold">Horário de Atendimento</h5>
-                    <p className="text-gray-600">Seg a Sex: 9h às 18h<br/>Sáb: 9h às 13h</p>
+                    <p className="text-gray-600">Seg a Sex: 9h às 20h<br/>Sáb: 9h às 13h</p>
                   </div>
                 </div>
                 <div className="h-48 w-full bg-gray-200 rounded-lg overflow-hidden mt-4">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.856980477218!2d-46.68007482565612!3d-23.6093259632836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a07c4b03473%3A0xf639925e13514034!2sR.%20Dr.%20Jesu%C3%ADno%20Maciel%2C%201205%20-%20Campo%20Belo%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004615-003!5e0!3m2!1spt-BR!2sbr!4v1683123456789!5m2!1spt-BR!2sbr"
+                        src="https://maps.google.com/maps?q=R.+Vieira+de+Morais,+1466+-+Campo+Belo,+S%C3%A3o+Paulo+-+SP,+04617-005&t=&z=15&ie=UTF8&iwloc=&output=embed"
                         width="100%" height="100%" style={{ border: 0 }} allowFullScreen={false} loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade" title="Mapa da localização">
                     </iframe>

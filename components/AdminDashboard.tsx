@@ -20,7 +20,7 @@ const AdminDashboard: React.FC = () => {
 
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
-        // Simple hardcoded password for demonstration
+        // Simple password check
         if (password === 'admin123') {
             setIsAuthenticated(true);
             localStorage.setItem('admin_auth', 'true');
@@ -72,7 +72,7 @@ const AdminDashboard: React.FC = () => {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all outline-none"
-                                placeholder="Digite a senha (admin123)"
+                                placeholder="Digite a senha..."
                                 required
                             />
                         </div>

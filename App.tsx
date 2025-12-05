@@ -61,7 +61,8 @@ const App: React.FC = () => {
         if (hash === 'privacy-policy' || hash === 'terms-of-service' || hash === 'admin') {
             setCurrentPage(hash);
             window.scrollTo(0, 0);
-        } else if (hash === '') {
+        } else {
+            // Treat any other hash (like #services, #about) or empty string as 'main'
             setCurrentPage('main');
         }
     };

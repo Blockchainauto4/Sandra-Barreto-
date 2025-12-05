@@ -11,9 +11,9 @@ const Footer: React.FC = () => {
                     <div>
                         <h4 className="text-xl font-serif font-bold text-white mb-2">Podologia Sandra Barreto</h4>
                         <address className="not-italic text-brand-secondary text-sm leading-relaxed mb-4">
-                            R. Dr. Jesuíno Maciel, 1205<br/>
+                            R. Vieira de Morais, 1466<br/>
                             Campo Belo, São Paulo - SP<br/>
-                            CEP 04615-003
+                            CEP 04617-005
                         </address>
                         <p className="text-xs text-brand-secondary opacity-70">Registro Profissional: 12.345-SP</p>
                     </div>
@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
                 </div>
                 <div className="mt-8 border-t border-gray-700 pt-4 text-center text-sm text-brand-secondary flex flex-col items-center gap-2">
                     <p>&copy; {new Date().getFullYear()} Sandra Barreto Podologia. Todos os direitos reservados.</p>
-                    <a href="#admin" className="text-xs text-brand-secondary/30 hover:text-brand-secondary transition-colors">Admin</a>
+                    <a href="#admin" className="text-xs text-brand-secondary/40 hover:text-brand-secondary transition-colors">Admin</a>
                 </div>
             </div>
         </footer>
