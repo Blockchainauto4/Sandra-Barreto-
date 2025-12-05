@@ -13,9 +13,9 @@ const Header: React.FC = () => {
     ];
 
     return (
-        <header className="bg-brand-light/80 backdrop-blur-md shadow-md sticky top-0 z-50">
-            <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-                <a href="#" className="text-2xl font-serif font-bold text-brand-primary">
+        <header className="bg-brand-light/80 backdrop-blur-md shadow-md sticky top-0 z-50 h-20 flex items-center">
+            <div className="container mx-auto px-6 flex justify-between items-center h-full">
+                <a href="#" className="text-2xl font-serif font-bold text-brand-primary flex-shrink-0">
                     Sandra Barreto
                 </a>
 
@@ -47,7 +47,7 @@ const Header: React.FC = () => {
 
             {/* Mobile Nav Menu */}
             {isOpen && (
-                <div className="md:hidden bg-brand-light">
+                <div className="md:hidden bg-brand-light absolute top-20 left-0 w-full shadow-lg border-t border-gray-100">
                     <nav className="flex flex-col items-center space-y-4 py-4">
                         {navLinks.map((link) => (
                             <a key={link.href} href={link.href} className="text-gray-600 hover:text-brand-primary transition-colors duration-300" onClick={() => setIsOpen(false)}>
