@@ -24,7 +24,13 @@ const BlogSection: React.FC<BlogSectionProps> = ({ posts }) => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {posts.map((post) => (
                             <div key={post.id} className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-2 transition-transform duration-300">
-                                <img src={post.imageUrl} alt={post.title} className="w-full h-48 object-cover" />
+                                <img 
+                                    src={post.imageUrl} 
+                                    alt={post.title} 
+                                    className="w-full h-48 object-cover"
+                                    width="400"
+                                    height="300"
+                                />
                                 <div className="p-6 flex flex-col flex-grow">
                                     <div className="flex justify-between items-center mb-2">
                                         <p className="text-xs font-semibold text-brand-primary uppercase tracking-wide">{post.date}</p>

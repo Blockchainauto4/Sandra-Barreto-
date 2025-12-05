@@ -16,6 +16,8 @@ const About: React.FC = () => {
                             src="https://picsum.photos/600/700?image=349"
                             alt="Podóloga Sandra Barreto no consultório em Campo Belo"
                             className="rounded-lg shadow-2xl w-full h-auto object-cover"
+                            width="600"
+                            height="700"
                         />
                     </div>
                     <div className="md:w-1/2">

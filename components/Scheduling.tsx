@@ -93,9 +93,9 @@ const Scheduling: React.FC<SchedulingProps> = ({ appointments, onAddAppointment 
         return (
             <div>
                 <div className="flex justify-between items-center mb-4">
-                    <button onClick={() => setCurrentMonth(new Date(year, month - 1, 1))}>&lt;</button>
+                    <button onClick={() => setCurrentMonth(new Date(year, month - 1, 1))} className="p-2" aria-label="Mês anterior">&lt;</button>
                     <h4 className="font-bold">{currentMonth.toLocaleString('pt-BR', { month: 'long', year: 'numeric' })}</h4>
-                    <button onClick={() => setCurrentMonth(new Date(year, month + 1, 1))}>&gt;</button>
+                    <button onClick={() => setCurrentMonth(new Date(year, month + 1, 1))} className="p-2" aria-label="Próximo mês">&gt;</button>
                 </div>
                 <div className="grid grid-cols-7 gap-2 text-center">
                     {['D', 'S', 'T', 'Q', 'Q', 'S', 'S'].map(d => <div key={d} className="font-semibold text-sm">{d}</div>)}
@@ -121,7 +121,7 @@ const Scheduling: React.FC<SchedulingProps> = ({ appointments, onAddAppointment 
                                 key={time}
                                 disabled={isBooked}
                                 onClick={() => { setSelectedTime(time); handleNextStep(); }}
-                                className={`p-2 rounded-md border transition-colors ${
+                                className={`p-3 rounded-md border transition-colors ${
                                     selectedTime === time ? 'bg-brand-primary text-white' :
                                     isBooked ? 'bg-gray-200 text-gray-400 cursor-not-allowed line-through' :
                                     'bg-white hover:bg-brand-secondary'

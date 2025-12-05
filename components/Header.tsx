@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 
 const Header: React.FC = () => {
@@ -32,7 +33,7 @@ const Header: React.FC = () => {
 
                 {/* Mobile Nav Button */}
                 <div className="md:hidden">
-                    <button onClick={() => setIsOpen(!isOpen)} className="text-brand-primary focus:outline-none">
+                    <button onClick={() => setIsOpen(!isOpen)} className="text-brand-primary focus:outline-none" aria-label="Abrir menu de navegação">
                         <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             {isOpen ? (
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

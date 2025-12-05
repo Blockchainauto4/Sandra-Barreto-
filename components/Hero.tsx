@@ -4,10 +4,19 @@ import React from 'react';
 const Hero: React.FC = () => {
     return (
         <section
-            className="relative bg-cover bg-center text-white min-h-[60vh] md:min-h-[80vh] flex items-center"
-            style={{ backgroundImage: "url('https://picsum.photos/1600/900?image=1073')" }}
+            className="relative text-white min-h-[60vh] md:min-h-[80vh] flex items-center overflow-hidden"
         >
-            <div className="absolute inset-0 bg-brand-dark bg-opacity-50"></div>
+            <img 
+                src="https://picsum.photos/1600/900?image=1073" 
+                alt="Consultório de Podologia"
+                className="absolute inset-0 w-full h-full object-cover -z-10"
+                width="1600"
+                height="900"
+                // @ts-ignore
+                fetchPriority="high"
+            />
+            <div className="absolute inset-0 bg-brand-dark bg-opacity-50 -z-10"></div>
+            
             <div className="container mx-auto px-6 text-center relative z-10">
                 <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 drop-shadow-lg">
                     Podologia no Campo Belo: <br className="hidden md:block" />

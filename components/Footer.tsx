@@ -10,18 +10,18 @@ const Footer: React.FC = () => {
                     {/* Brand Info */}
                     <div>
                         <h4 className="text-xl font-serif font-bold text-white mb-2">Podologia Sandra Barreto</h4>
-                        <address className="not-italic text-brand-secondary text-sm leading-relaxed mb-4">
+                        <address className="not-italic text-gray-300 text-sm leading-relaxed mb-4">
                             R. Vieira de Morais, 1466<br/>
                             Campo Belo, São Paulo - SP<br/>
                             CEP 04617-005
                         </address>
-                        <p className="text-xs text-brand-secondary opacity-70">Registro Profissional: 12.345-SP</p>
+                        <p className="text-xs text-gray-400 opacity-70">Registro Profissional: 12.345-SP</p>
                     </div>
 
                     {/* Service Areas (Great for SEO) */}
                     <div>
                         <h5 className="text-lg font-bold text-white mb-3">Atendimento na Região</h5>
-                        <ul className="text-sm text-brand-secondary space-y-1">
+                        <ul className="text-sm text-gray-300 space-y-1">
                             <li><a href="#" className="hover:text-white transition-colors">Podóloga no Campo Belo</a></li>
                             <li><a href="#" className="hover:text-white transition-colors">Podóloga em Moema</a></li>
                             <li><a href="#" className="hover:text-white transition-colors">Podóloga no Brooklin</a></li>
@@ -34,8 +34,8 @@ const Footer: React.FC = () => {
                     <div className="flex flex-col items-center md:items-start">
                         <h5 className="text-lg font-bold text-white mb-3">Informações</h5>
                         <div className="flex flex-col space-y-2 mb-4">
-                            <a href="#privacy-policy" className="text-sm text-brand-secondary hover:text-white transition-colors">Política de Privacidade</a>
-                            <a href="#terms-of-service" className="text-sm text-brand-secondary hover:text-white transition-colors">Termos de Serviço</a>
+                            <a href="#privacy-policy" className="text-sm text-gray-300 hover:text-white transition-colors">Política de Privacidade</a>
+                            <a href="#terms-of-service" className="text-sm text-gray-300 hover:text-white transition-colors">Termos de Serviço</a>
                         </div>
                         <div className="flex space-x-4">
                             <a href="#" aria-label="Instagram da Podologia Sandra Barreto" className="text-brand-secondary hover:text-white transition-colors">
@@ -51,9 +51,9 @@ const Footer: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <div className="mt-8 border-t border-gray-700 pt-4 text-center text-sm text-brand-secondary flex flex-col items-center gap-2">
+                <div className="mt-8 border-t border-gray-700 pt-4 text-center text-sm text-gray-400 flex flex-col items-center gap-2">
                     <p>&copy; {new Date().getFullYear()} Sandra Barreto Podologia. Todos os direitos reservados.</p>
-                    <a href="#admin" className="text-xs text-brand-secondary/40 hover:text-brand-secondary transition-colors">Admin</a>
+                    <a href="#admin" className="text-xs text-gray-600 hover:text-gray-400 transition-colors">Admin</a>
                 </div>
             </div>
         </footer>
