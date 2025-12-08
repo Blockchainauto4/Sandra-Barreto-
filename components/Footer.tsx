@@ -22,11 +22,12 @@ const Footer: React.FC = () => {
                     <div>
                         <h5 className="text-lg font-bold text-white mb-3">Atendimento na Região</h5>
                         <ul className="text-sm text-gray-300 space-y-1">
+                            <li><a href="#zona-sul" className="hover:text-white transition-colors font-semibold text-brand-secondary">Podologia Zona Sul SP</a></li>
                             <li><a href="#" className="hover:text-white transition-colors">Podóloga no Campo Belo</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Podóloga em Moema</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Podóloga no Brooklin</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Vila Olímpia e Itaim Bibi</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Aeroporto de Congonhas</a></li>
+                            <li><a href="#moema" className="hover:text-white transition-colors">Podóloga em Moema</a></li>
+                            <li><a href="#itaim" className="hover:text-white transition-colors">Podóloga no Itaim Bibi</a></li>
+                            <li><a href="#brooklin" className="hover:text-white transition-colors">Podóloga no Brooklin</a></li>
+                            <li><a href="#campo-limpo" className="hover:text-white transition-colors">Campo Limpo e Jd. Sul</a></li>
                         </ul>
                     </div>
 
@@ -51,9 +52,10 @@ const Footer: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <div className="mt-8 border-t border-gray-700 pt-4 text-center text-sm text-gray-400 flex flex-col items-center gap-2">
-                    <p>&copy; {new Date().getFullYear()} Sandra Barreto Podologia. Todos os direitos reservados.</p>
-                    <a href="#admin" className="text-xs text-gray-300 hover:text-white transition-colors">Admin</a>
+                
+                <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400 flex flex-col md:flex-row justify-between items-center">
+                    <p>&copy; {new Date().getFullYear()} Podologia Sandra Barreto. Todos os direitos reservados.</p>
+                    <p className="mt-2 md:mt-0">Desenvolvido com tecnologia de ponta para sua saúde.</p>
                 </div>
             </div>
         </footer>

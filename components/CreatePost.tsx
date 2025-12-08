@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 // import { GoogleGenAI } from "@google/genai"; // Removed static import to save bundle size
-import { BlogPost } from '../types';
+import type { BlogPost } from '../types';
 
 interface CreatePostProps {
     onAddPost: (post: BlogPost) => void;

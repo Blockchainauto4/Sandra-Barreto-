@@ -1,34 +1,57 @@
+
 import React from 'react';
 
-const Hero: React.FC = () => {
+interface HeroProps {
+    title?: React.ReactNode;
+    subtitle?: React.ReactNode;
+}
+
+const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
     return (
         <section
-            className="relative text-white min-h-[60vh] md:min-h-[80vh] flex items-center overflow-hidden"
+            className="relative text-brand-dark min-h-[60vh] md:min-h-[85vh] flex items-center overflow-hidden"
         >
             <img 
                 src="https://picsum.photos/1600/900?image=1073" 
                 alt="Consultório de Podologia"
-                className="absolute inset-0 w-full h-full object-cover -z-10"
+                className="absolute inset-0 w-full h-full object-cover -z-20"
                 width="1600"
                 height="900"
                 loading="eager"
                 fetchPriority="high"
             />
-            <div className="absolute inset-0 bg-brand-dark bg-opacity-50 -z-10"></div>
             
-            <div className="container mx-auto px-6 text-center relative z-10">
-                <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 drop-shadow-lg">
-                    Podologia no Campo Belo: <br className="hidden md:block" />
-                    Saúde e Bem-Estar para Seus Pés
+            {/* White/Light Overlay for Black Text readability */}
+            <div className="absolute inset-0 bg-white/90 -z-10"></div>
+            
+            <div className="container mx-auto px-6 text-center relative z-10 pt-10">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 tracking-tight leading-tight text-black">
+                    {title || (
+                        <>
+                            Podologia em Campo Belo e Moema: <br className="hidden md:block" />
+                            <span className="text-brand-primary">Saúde e Bem-Estar</span> para Seus Pés
+                        </>
+                    )}
                 </h1>
-                <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto drop-shadow-md">
-                    Clínica especializada localizada na Zona Sul de SP. Atendimento de excelência para moradores de <strong>Moema, Brooklin, Vila Olímpia e Região</strong>. Agende sua avaliação com a Dra. Sandra Barreto.
-                </p>
+                
+                {/* Decorative separator */}
+                <div className="w-24 h-1 bg-brand-primary mx-auto mb-8 rounded-full shadow-sm"></div>
+
+                <div className="text-lg md:text-xl text-gray-700 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
+                    {subtitle ? (
+                        subtitle
+                    ) : (
+                        <p>
+                             Clínica especializada localizada na Zona Sul de SP. Atendimento de excelência para moradores de <strong>Campo Belo, Moema, Brooklin e Vila Olímpia</strong>. Agende sua avaliação com a Dra. Sandra Barreto.
+                        </p>
+                    )}
+                </div>
                 <a
                     href="#agendamento"
-                    className="bg-brand-secondary text-brand-dark font-bold py-3 px-8 rounded-full text-lg hover:bg-white transition-all duration-300 transform hover:scale-110 shadow-lg"
+                    className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-brand-primary font-sans rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary hover:bg-brand-dark shadow-lg transform hover:-translate-y-1"
                 >
                     Agende sua Consulta
+                    <svg className="w-5 h-5 ml-2 -mr-1 transition-transform group-hover:translate-x-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                 </a>
             </div>
         </section>

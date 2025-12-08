@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { FAQ_DATA } from '../constants';
-import { FAQItem } from '../types';
+import type { FAQItem } from '../types';
 
 interface FAQAccordionItemProps {
   item: FAQItem;

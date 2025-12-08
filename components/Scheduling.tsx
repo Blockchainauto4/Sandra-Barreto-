@@ -1,6 +1,6 @@
 
 import React, { useState, useMemo } from 'react';
-import { Appointment } from '../types';
+import type { Appointment } from '../types';
 import { SERVICES_DATA } from '../constants';
 
 interface SchedulingProps {
