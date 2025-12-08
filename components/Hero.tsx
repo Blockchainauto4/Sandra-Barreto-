@@ -9,7 +9,7 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
     return (
         <section
-            className="relative text-brand-light min-h-[60vh] md:min-h-[85vh] flex items-center overflow-hidden"
+            className="relative text-brand-dark min-h-[60vh] md:min-h-[85vh] flex items-center overflow-hidden"
         >
             <img 
                 src="https://picsum.photos/1600/900?image=1073" 
@@ -21,23 +21,23 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
                 fetchPriority="high"
             />
             
-            {/* Blue Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-brand-primary/95 to-brand-dark/90 -z-10"></div>
+            {/* White Overlay for Black Text */}
+            <div className="absolute inset-0 bg-white/85 -z-10"></div>
             
             <div className="container mx-auto px-6 text-center relative z-10 pt-10">
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 tracking-tight leading-tight text-white drop-shadow-md">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 tracking-tight leading-tight text-brand-dark drop-shadow-sm">
                     {title || (
                         <>
                             Podologia em Campo Belo e Moema: <br className="hidden md:block" />
-                            <span className="text-brand-secondary">Saúde e Bem-Estar</span> para Seus Pés
+                            <span className="text-brand-primary">Saúde e Bem-Estar</span> para Seus Pés
                         </>
                     )}
                 </h1>
                 
                 {/* Decorative separator */}
-                <div className="w-24 h-1 bg-brand-secondary mx-auto mb-8 rounded-full shadow-sm"></div>
+                <div className="w-24 h-1 bg-brand-primary mx-auto mb-8 rounded-full shadow-sm"></div>
 
-                <div className="text-lg md:text-xl text-brand-light mb-10 max-w-3xl mx-auto font-light leading-relaxed">
+                <div className="text-lg md:text-xl text-gray-800 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
                     {subtitle ? (
                         subtitle
                     ) : (
@@ -48,7 +48,7 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
                 </div>
                 <a
                     href="#agendamento"
-                    className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-brand-dark transition-all duration-200 bg-white font-sans rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white hover:bg-brand-secondary shadow-lg transform hover:-translate-y-1"
+                    className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-brand-primary font-sans rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary hover:bg-brand-dark shadow-lg transform hover:-translate-y-1"
                 >
                     Agende sua Consulta
                     <svg className="w-5 h-5 ml-2 -mr-1 transition-transform group-hover:translate-x-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
