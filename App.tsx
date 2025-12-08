@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, Suspense, useSyncExternalStore } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -25,6 +24,7 @@ const CookieConsentBanner = React.lazy(() => import('./components/CookieConsentB
 const AdminDashboard = React.lazy(() => import('./components/AdminDashboard'));
 const PrivacyPolicy = React.lazy(() => import('./components/PrivacyPolicy'));
 const TermsOfService = React.lazy(() => import('./components/TermsOfService'));
+const ManicurePage = React.lazy(() => import('./components/ManicurePage')); // New Page
 
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-brand-light">
@@ -49,10 +49,10 @@ type NeighborhoodConfig = {
 
 const NEIGHBORHOODS: Record<string, NeighborhoodConfig> = {
     'moema': {
-        heroTitle: <>Podologia Especializada em <span className="text-brand-secondary">Moema</span></>,
-        heroSubtitle: <p>Sofrendo com dores nos pés? Atendimento de referência para moradores de <strong>Moema</strong> e região do <strong>Shopping Ibirapuera</strong>. Tratamentos para unhas encravadas, micoses e pés diabéticos.</p>,
-        seoTitle: "Podóloga em Moema | Unha Encravada e Pé Diabético | Dra. Sandra",
-        seoDesc: "Procurando Podóloga em Moema? Tratamento especializado para unhas encravadas, calos e pé diabético próximo ao Shopping Ibirapuera. Agende sua consulta!"
+        heroTitle: <>Manicure e Podologia em <span className="text-brand-secondary">Moema</span></>,
+        heroSubtitle: <p>Atendimento de referência para <strong>Unhas de Gel e Podologia</strong> em Moema e região do <strong>Shopping Ibirapuera</strong>. Biossegurança e conforto.</p>,
+        seoTitle: "Manicure e Podóloga em Moema | Unha Encravada e Gel | Dra. Sandra",
+        seoDesc: "Procurando Manicure ou Podóloga em Moema? Especialista em unhas de gel, blindagem e tratamento de pé diabético. Agende sua consulta!"
     },
     'campo-limpo': {
         heroTitle: <>Podologia para o <span className="text-brand-secondary">Campo Limpo</span> e Região</>,
@@ -61,22 +61,22 @@ const NEIGHBORHOODS: Record<string, NeighborhoodConfig> = {
         seoDesc: "Podologia especializada atendendo moradores do Campo Limpo, Vila das Belezas, Jardim Sul e Horto do Ypê. Tratamento de unhas, calos e micoses."
     },
     'itaim': {
-        heroTitle: <>Podologia Premium no <span className="text-brand-secondary">Itaim Bibi</span></>,
-        heroSubtitle: <p>Excelência em cuidados com os pés para quem vive ou trabalha no <strong>Itaim Bibi</strong> e arredores da <strong>Av. Faria Lima</strong>. Biossegurança total e atendimento pontual.</p>,
-        seoTitle: "Podóloga no Itaim Bibi e Vila Olímpia | Dra. Sandra Barreto",
-        seoDesc: "Clínica de Podologia próxima ao Itaim Bibi. Especialista em calosidades, unhas encravadas e podologia esportiva. Atendimento exclusivo na Zona Sul."
+        heroTitle: <>Podologia e Unhas no <span className="text-brand-secondary">Itaim Bibi</span></>,
+        heroSubtitle: <p>Excelência em cuidados com os pés e mãos para quem vive ou trabalha no <strong>Itaim Bibi</strong> e arredores. Biossegurança total e atendimento pontual.</p>,
+        seoTitle: "Podóloga e Manicure no Itaim Bibi | Dra. Sandra Barreto",
+        seoDesc: "Clínica de Podologia e Manicure próxima ao Itaim Bibi. Especialista em calosidades, unhas de gel e podologia esportiva. Atendimento exclusivo."
     },
     'brooklin': {
-        heroTitle: <>Sua Podóloga no <span className="text-brand-secondary">Brooklin</span></>,
-        heroSubtitle: <p>Conforto e saúde para seus pés no coração do <strong>Brooklin</strong> e região da <strong>Berrini</strong>. Tratamentos preventivos e corretivos com especialista qualificada.</p>,
-        seoTitle: "Podóloga no Brooklin Novo e Velho | Zona Sul SP",
-        seoDesc: "Podologia no Brooklin e Berrini. Tratamento para unha encravada, olho de peixe e pés diabéticos. Agende sua avaliação com a Dra. Sandra Barreto."
+        heroTitle: <>Sua Manicure e Podóloga no <span className="text-brand-secondary">Brooklin</span></>,
+        heroSubtitle: <p>Conforto e beleza para mãos e pés no coração do <strong>Brooklin</strong> e região da <strong>Berrini</strong>. Tratamentos estéticos e clínicos com especialista qualificada.</p>,
+        seoTitle: "Manicure e Podóloga no Brooklin | Zona Sul SP",
+        seoDesc: "Podologia e Unhas de Gel no Brooklin e Berrini. Tratamento para unha encravada e SPA dos pés. Agende sua avaliação com a Dra. Sandra Barreto."
     },
     'zona-sul': {
-        heroTitle: <>Podologia na <span className="text-brand-secondary">Zona Sul de SP</span></>,
-        heroSubtitle: <p>Clínica de Podologia bem localizada para quem busca <strong>"Podólogo perto de mim"</strong>. Fácil acesso via Av. Roberto Marinho e Corredor Norte-Sul. Atendimento para <strong>Campo Belo, Moema, Santo Amaro e Região</strong>.</p>,
-        seoTitle: "Podóloga Perto de Mim | Zona Sul SP | Dra. Sandra Barreto",
-        seoDesc: "Procurando podóloga perto de você na Zona Sul? Localização central no Campo Belo com fácil acesso. Tratamentos especializados e horários flexíveis."
+        heroTitle: <>Manicure e Podologia na <span className="text-brand-secondary">Zona Sul de SP</span></>,
+        heroSubtitle: <p>Clínica bem localizada para quem busca <strong>"Manicure perto de mim"</strong>. Fácil acesso via Av. Roberto Marinho. Atendimento para <strong>Campo Belo, Moema e Região</strong>.</p>,
+        seoTitle: "Manicure e Podóloga Perto de Mim | Zona Sul SP | Sandra Barreto",
+        seoDesc: "Procurando manicure e podóloga na Zona Sul? Localização central no Campo Belo. Unhas de gel, blindagem e tratamentos especializados."
     }
 };
 
@@ -104,9 +104,9 @@ const MainContent: React.FC<MainContentProps> = ({
         
         {/* Below the fold content is lazy loaded */}
         <Suspense fallback={<SectionLoader />}>
+            <Services />
             <About />
             <Locations />
-            <Services />
             <Pricing />
             <Testimonials />
             <CreatePost onAddPost={onAddPost} />
@@ -148,7 +148,7 @@ const App: React.FC = () => {
   if (NEIGHBORHOODS[hash]) {
       currentLocationConfig = NEIGHBORHOODS[hash];
       currentPage = 'neighborhood';
-  } else if (hash === 'privacy-policy' || hash === 'terms-of-service' || hash === 'admin') {
+  } else if (hash === 'privacy-policy' || hash === 'terms-of-service' || hash === 'admin' || hash === 'manicure') {
       currentPage = hash;
   }
   
@@ -197,10 +197,17 @@ const App: React.FC = () => {
             desc: "Informações legais e administrativas. Política de Privacidade e Termos de Serviço." 
         };
     }
-    // Default Home SEO
+    if (currentPage === 'manicure') {
+        // Optimized Local SEO for Manicure
+        return { 
+            title: "Manicure e Unha de Gel em Campo Belo, Moema e Brooklin | Sandra Barreto", 
+            desc: "Esmaltação em Gel, Blindagem e SPA dos Pés com biossegurança (Autoclave). Manicure perto do Aeroporto de Congonhas e Shopping Ibirapuera. Agende!" 
+        };
+    }
+    // Default Home SEO - Updated to reflect High Demand for Manicure
     return { 
-        title: "Podóloga na Zona Sul SP | Campo Belo, Moema e Itaim", 
-        desc: "Podologia em Moema, Campo Belo e Itaim Bibi. Dra. Sandra Barreto: Especialista em unha encravada, pé diabético e calos. Clínica na Zona Sul de SP." 
+        title: "Manicure e Podóloga na Zona Sul SP | Unhas de Gel e Podologia", 
+        desc: "Especialista em Unhas de Gel, Blindagem, Manicure e Podologia no Campo Belo, Moema e Itaim. Dra. Sandra Barreto: Estética e saúde para seus pés e mãos." 
     };
   };
 
@@ -214,6 +221,8 @@ const App: React.FC = () => {
             return <TermsOfService />;
         case 'admin':
             return <AdminDashboard />;
+        case 'manicure':
+            return <ManicurePage appointments={appointments} onAddAppointment={handleAddAppointment} />;
         case 'neighborhood':
             // Renders the main content but with injected props from the neighborhood config
             return <MainContent 
@@ -225,11 +234,14 @@ const App: React.FC = () => {
                       heroSubtitle={currentLocationConfig?.heroSubtitle}
                     />;
         default:
+            // Default Home Content - Manicure First Priority
             return <MainContent 
                       posts={posts} 
                       appointments={appointments}
                       onAddPost={handleAddPost}
                       onAddAppointment={handleAddAppointment}
+                      heroTitle={<>Manicure Premium e <span className="text-brand-secondary">Podologia</span><br/>na Zona Sul de SP</>}
+                      heroSubtitle={<p>Realce sua beleza com <strong>Unhas de Gel e Blindagem</strong> ou cuide da saúde dos seus pés. Atendimento no Campo Belo e Moema com biossegurança hospitalar.</p>}
                     />;
     }
   }

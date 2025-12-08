@@ -28,7 +28,17 @@ const FAQAccordionItem: React.FC<FAQAccordionItemProps> = ({ item, isOpen, onCli
     );
 };
 
-const FAQ: React.FC = () => {
+interface FAQProps {
+    items?: FAQItem[];
+    title?: string;
+    subtitle?: string;
+}
+
+const FAQ: React.FC<FAQProps> = ({ 
+    items = FAQ_DATA, 
+    title = "Perguntas Frequentes", 
+    subtitle = "Tire suas Dúvidas" 
+}) => {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     const handleToggle = (index: number) => {
@@ -40,14 +50,14 @@ const FAQ: React.FC = () => {
             <div className="container mx-auto px-6">
                 <div className="text-center mb-12">
                     <h2 className="text-sm font-semibold text-brand-primary uppercase tracking-wider mb-2">
-                        Tire suas Dúvidas
+                        {subtitle}
                     </h2>
                     <h3 className="text-3xl md:text-4xl font-serif font-bold text-brand-dark">
-                        Perguntas Frequentes
+                        {title}
                     </h3>
                 </div>
                 <div className="max-w-3xl mx-auto">
-                    {FAQ_DATA.map((item, index) => (
+                    {items.map((item, index) => (
                         <FAQAccordionItem
                             key={index}
                             item={item}

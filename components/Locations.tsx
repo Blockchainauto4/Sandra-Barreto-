@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const Locations: React.FC = () => {
@@ -29,10 +28,10 @@ const Locations: React.FC = () => {
                         Área de Cobertura
                     </h2>
                     <h3 className="text-3xl md:text-4xl font-serif font-bold text-brand-dark">
-                        Podologia Perto de Você na Zona Sul
+                        Manicure e Podologia Perto de Você
                     </h3>
                     <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-                        Nossa clínica está estrategicamente posicionada para oferecer fácil acesso aos moradores dos principais bairros da Zona Sul de São Paulo. Se você procurou por <strong>"podólogo perto de mim"</strong>, você encontrou o lugar certo.
+                        Nossa clínica está estrategicamente posicionada para oferecer fácil acesso aos moradores dos principais bairros da Zona Sul de São Paulo. Se você procurou por <strong>"manicure perto de mim"</strong> ou <strong>"podóloga na Zona Sul"</strong>, você encontrou o lugar certo.
                     </p>
                 </div>
 
@@ -47,9 +46,9 @@ const Locations: React.FC = () => {
 
                 <div className="mt-12 bg-white p-8 rounded-xl shadow-lg border border-gray-100 flex flex-col md:flex-row items-center justify-between gap-6">
                     <div className="text-center md:text-left">
-                        <h4 className="text-xl font-bold text-brand-dark mb-2">Fácil Acesso</h4>
+                        <h4 className="text-xl font-bold text-brand-dark mb-2">Fácil Acesso no Campo Belo</h4>
                         <p className="text-gray-600">
-                            Estamos localizados na <strong>R. Vieira de Morais, 1466</strong>, uma das principais vias do Campo Belo, com conexões rápidas para a Av. Roberto Marinho, Corredor Norte-Sul e Av. Santo Amaro.
+                            Estamos localizados na <strong>R. Vieira de Morais, 1466</strong>, uma das principais vias do bairro, com conexões rápidas para a Av. Roberto Marinho, Corredor Norte-Sul e Av. Santo Amaro.
                         </p>
                     </div>
                     <a 

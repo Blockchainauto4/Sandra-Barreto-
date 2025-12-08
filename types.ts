@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 export interface Service {
@@ -37,4 +38,10 @@ export interface Appointment {
   clientName: string;
   clientContact: string;
   clientEmail: string;
+}
+
+export interface PricingItem {
+  treatment: string;
+  indication: string;
+  price: string;
 }

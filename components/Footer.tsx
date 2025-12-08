@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const Footer: React.FC = () => {
@@ -9,25 +8,25 @@ const Footer: React.FC = () => {
                     
                     {/* Brand Info */}
                     <div>
-                        <h4 className="text-xl font-serif font-bold text-white mb-2">Podologia Sandra Barreto</h4>
+                        <h4 className="text-xl font-serif font-bold text-white mb-2">Sandra Barreto</h4>
                         <address className="not-italic text-gray-300 text-sm leading-relaxed mb-4">
                             R. Vieira de Morais, 1466<br/>
                             Campo Belo, São Paulo - SP<br/>
                             CEP 04617-005
                         </address>
-                        <p className="text-xs text-gray-400 opacity-70">Registro Profissional: 12.345-SP</p>
+                        <p className="text-xs text-gray-400 opacity-70">Excelência em Unhas e Podologia</p>
                     </div>
 
                     {/* Service Areas (Great for SEO) */}
                     <div>
-                        <h5 className="text-lg font-bold text-white mb-3">Atendimento na Região</h5>
+                        <h5 className="text-lg font-bold text-white mb-3">Serviços na Região</h5>
                         <ul className="text-sm text-gray-300 space-y-1">
-                            <li><a href="#zona-sul" className="hover:text-white transition-colors font-semibold text-brand-secondary">Podologia Zona Sul SP</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Podóloga no Campo Belo</a></li>
-                            <li><a href="#moema" className="hover:text-white transition-colors">Podóloga em Moema</a></li>
+                            <li><a href="#zona-sul" className="hover:text-white transition-colors font-semibold text-brand-secondary">Manicure Zona Sul SP</a></li>
+                            <li><a href="#manicure" className="hover:text-white transition-colors">Unhas de Gel Campo Belo</a></li>
+                            <li><a href="#moema" className="hover:text-white transition-colors">Manicure e Podóloga em Moema</a></li>
+                            <li><a href="#brooklin" className="hover:text-white transition-colors">Blindagem de Unhas Brooklin</a></li>
                             <li><a href="#itaim" className="hover:text-white transition-colors">Podóloga no Itaim Bibi</a></li>
-                            <li><a href="#brooklin" className="hover:text-white transition-colors">Podóloga no Brooklin</a></li>
-                            <li><a href="#campo-limpo" className="hover:text-white transition-colors">Campo Limpo e Jd. Sul</a></li>
+                            <li><a href="#campo-limpo" className="hover:text-white transition-colors">Podologia Campo Limpo</a></li>
                         </ul>
                     </div>
 
@@ -54,8 +53,8 @@ const Footer: React.FC = () => {
                 </div>
                 
                 <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400 flex flex-col md:flex-row justify-between items-center">
-                    <p>&copy; {new Date().getFullYear()} Podologia Sandra Barreto. Todos os direitos reservados.</p>
-                    <p className="mt-2 md:mt-0">Desenvolvido com tecnologia de ponta para sua saúde.</p>
+                    <p>&copy; {new Date().getFullYear()} Sandra Barreto. Todos os direitos reservados.</p>
+                    <p className="mt-2 md:mt-0">Desenvolvido com tecnologia de ponta para sua saúde e beleza.</p>
                 </div>
             </div>
         </footer>

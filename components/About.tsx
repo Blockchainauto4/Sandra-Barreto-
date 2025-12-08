@@ -1,6 +1,21 @@
+
 import React from 'react';
 
-const About: React.FC = () => {
+interface AboutProps {
+    title?: React.ReactNode;
+    subtitle?: React.ReactNode;
+    description?: React.ReactNode;
+    image?: string;
+    badges?: Array<{text: string}>;
+}
+
+const About: React.FC<AboutProps> = ({ 
+    title, 
+    subtitle, 
+    description, 
+    image,
+    badges 
+}) => {
     return (
         <section id="sobre" className="py-20 bg-white">
             <div className="container mx-auto px-6">
@@ -12,8 +27,8 @@ const About: React.FC = () => {
                             <p className="text-sm font-semibold uppercase tracking-wider">Anos de<br/>Experiência</p>
                         </div>
                         <img
-                            src="https://picsum.photos/600/700?image=349"
-                            alt="Podóloga Sandra Barreto no consultório em Campo Belo"
+                            src={image || "https://picsum.photos/600/700?image=349"}
+                            alt="Profissional no consultório em Campo Belo"
                             className="rounded-lg shadow-2xl w-full h-auto object-cover"
                             width="600"
                             height="700"
@@ -23,39 +38,41 @@ const About: React.FC = () => {
                     </div>
                     <div className="md:w-1/2">
                         <h2 className="text-sm font-semibold text-brand-primary uppercase tracking-wider mb-2">
-                            Experiência e Confiança
+                            {subtitle || "Experiência e Confiança"}
                         </h2>
                         <h3 className="text-3xl md:text-4xl font-serif font-bold text-brand-dark mb-6">
-                            Sandra Barreto - Sua Podóloga na Zona Sul
+                            {title || "Sandra Barreto - Sua Podóloga na Zona Sul"}
                         </h3>
-                        <p className="text-gray-600 mb-4 leading-relaxed">
-                            Com mais de <strong>15 anos de experiência clínica</strong>, sou especialista graduada em Podologia, oferecendo tratamentos avançados para <strong>Pés Diabéticos</strong>, <strong>Unhas Encravadas</strong> e <strong>Podologia Esportiva</strong> aqui no bairro do Campo Belo.
-                        </p>
-                        <p className="text-gray-600 mb-6 leading-relaxed">
-                            Meu consultório está estrategicamente localizado para atender pacientes de <strong>Moema</strong>, <strong>Brooklin</strong>, <strong>Itaim Bibi</strong> e <strong>Vila Olímpia</strong>. Sigo rigorosos protocolos de biossegurança e esterilização (Autoclave), garantindo saúde e conforto. Sou membro ativo da Associação Brasileira de Podólogos.
-                        </p>
+                        
+                        <div className="prose text-gray-600 mb-6 leading-relaxed">
+                            {description || (
+                                <>
+                                    <p className="mb-4">
+                                        Com mais de <strong>15 anos de experiência clínica</strong>, sou especialista graduada em Podologia, oferecendo tratamentos avançados para <strong>Pés Diabéticos</strong>, <strong>Unhas Encravadas</strong> e <strong>Podologia Esportiva</strong> aqui no bairro do Campo Belo.
+                                    </p>
+                                    <p>
+                                        Meu consultório está estrategicamente localizado para atender pacientes de <strong>Moema</strong>, <strong>Brooklin</strong>, <strong>Itaim Bibi</strong> e <strong>Vila Olímpia</strong>. Sigo rigorosos protocolos de biossegurança e esterilização (Autoclave), garantindo saúde e conforto. Sou membro ativo da Associação Brasileira de Podólogos.
+                                    </p>
+                                </>
+                            )}
+                        </div>
                         
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                            <div className="flex items-center space-x-3">
-                                <svg className="w-5 h-5 text-brand-primary" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
-                                <span className="text-sm font-medium text-gray-700">Certificação Técnica</span>
-                            </div>
-                            <div className="flex items-center space-x-3">
-                                <svg className="w-5 h-5 text-brand-primary" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
-                                <span className="text-sm font-medium text-gray-700">Especialista em Pés Diabéticos</span>
-                            </div>
-                             <div className="flex items-center space-x-3">
-                                <svg className="w-5 h-5 text-brand-primary" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
-                                <span className="text-sm font-medium text-gray-700">Registro Profissional Ativo</span>
-                            </div>
-                             <div className="flex items-center space-x-3">
-                                <svg className="w-5 h-5 text-brand-primary" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
-                                <span className="text-sm font-medium text-gray-700">Protocolos Rigorosos de Higiene</span>
-                            </div>
+                            {(badges || [
+                                { text: "Certificação Técnica" },
+                                { text: "Especialista em Pés Diabéticos" },
+                                { text: "Registro Profissional Ativo" },
+                                { text: "Protocolos Rigorosos de Higiene" }
+                            ]).map((badge, idx) => (
+                                <div key={idx} className="flex items-center space-x-3">
+                                    <svg className="w-5 h-5 text-brand-primary" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
+                                    <span className="text-sm font-medium text-gray-700">{badge.text}</span>
+                                </div>
+                            ))}
                         </div>
 
                         <a href="#servicos" className="bg-brand-primary text-white font-bold py-3 px-6 rounded-full hover:bg-brand-dark transition-colors duration-300">
-                            Conheça Meus Tratamentos
+                            Conheça Nossos Tratamentos
                         </a>
                     </div>
                 </div>
