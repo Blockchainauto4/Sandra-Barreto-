@@ -186,6 +186,16 @@ export const MANICURE_FAQ_DATA: FAQItem[] = [
 // Blog Posts Data
 export const BLOG_POSTS_DATA: BlogPost[] = [
     {
+        id: '3',
+        title: 'Qual clínica de podólogo mais perto de mim na Zona Sul?',
+        content: 'Muitos pacientes chegam ao nosso consultório após pesquisarem no Google por "podólogo perto de mim". A conveniência é fundamental, especialmente quando se trata de dores agudas como unha encravada. Nossa clínica está estrategicamente situada no Campo Belo, oferecendo acesso rápido para moradores de Moema (via Ibirapuera), Brooklin (via Roberto Marinho) e Vila Olímpia. Além da proximidade, oferecemos estacionamento e horários flexíveis. Não escolha apenas pelo mais próximo, escolha pela segurança e higiene que a Dra. Sandra Barreto oferece.',
+        imageUrl: 'https://picsum.photos/seed/location/800/600',
+        date: '10 de Agosto, 2024',
+        excerpt: 'Descubra como encontrar o podólogo ideal próximo à sua localização no Campo Belo, Moema e região. Dicas para escolher o melhor profissional perto de você.',
+        author: 'Sandra Barreto',
+        authorRole: 'Podóloga Especialista'
+    },
+    {
         id: '1',
         title: 'Pés Saudáveis no Verão: Dicas da sua Podóloga no Campo Belo',
         content: 'O verão é uma estação que exige cuidados redobrados com os pés. O uso constante de calçados abertos, o contato com areia e a umidade podem causar problemas. Por isso, separamos 5 dicas essenciais para você curtir a estação sem preocupações: hidrate diariamente, use protetor solar, seque bem os pés, escolha calçados confortáveis e, claro, visite seu podólogo regularmente. Se você está na Zona Sul de SP, especialmente no Campo Belo, Moema ou Brooklin, agende uma avaliação e garanta que seus pés estejam prontos para aproveitar o melhor do verão!',

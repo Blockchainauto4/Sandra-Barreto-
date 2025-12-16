@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, Suspense, useSyncExternalStore } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -77,6 +78,12 @@ const NEIGHBORHOODS: Record<string, NeighborhoodConfig> = {
         heroSubtitle: <p>Clínica bem localizada para quem busca <strong>"Manicure perto de mim"</strong>. Fácil acesso via Av. Roberto Marinho. Atendimento para <strong>Campo Belo, Moema e Região</strong>.</p>,
         seoTitle: "Manicure e Podóloga Perto de Mim | Zona Sul SP | Sandra Barreto",
         seoDesc: "Procurando manicure e podóloga na Zona Sul? Localização central no Campo Belo. Unhas de gel, blindagem e tratamentos especializados."
+    },
+    'perto-de-mim': {
+        heroTitle: <>Podóloga <span className="text-brand-secondary">Perto de Você</span></>,
+        heroSubtitle: <p>Localização estratégica no <strong>Campo Belo</strong> com fácil acesso para <strong>Moema, Brooklin e Aeroporto</strong>. A clínica mais completa da região.</p>,
+        seoTitle: "Podólogo Perto de Mim | Clínica Sandra Barreto Zona Sul",
+        seoDesc: "Encontre a melhor podóloga perto de você na Zona Sul de SP. Atendimento especializado no Campo Belo, próximo a Moema e Brooklin."
     }
 };
 
