@@ -11,6 +11,7 @@ const Services = React.lazy(() => import('./components/Services'));
 const Pricing = React.lazy(() => import('./components/Pricing')); // Loaded lazy but important for snippets
 const Locations = React.lazy(() => import('./components/Locations')); // New component for SEO
 const Testimonials = React.lazy(() => import('./components/Testimonials'));
+const InstagramFeed = React.lazy(() => import('./components/InstagramFeed'));
 const ProfessionalRegistration = React.lazy(() => import('./components/ProfessionalRegistration'));
 const FAQ = React.lazy(() => import('./components/FAQ'));
 const Scheduling = React.lazy(() => import('./components/Scheduling'));
@@ -20,6 +21,7 @@ const CreatePost = React.lazy(() => import('./components/CreatePost'));
 const BlogSection = React.lazy(() => import('./components/BlogSection'));
 const Notification = React.lazy(() => import('./components/Notification'));
 const CookieConsentBanner = React.lazy(() => import('./components/CookieConsentBanner'));
+const SchedulingAssistant = React.lazy(() => import('./components/SchedulingAssistant'));
 
 // Lazy load Pages
 const AdminDashboard = React.lazy(() => import('./components/AdminDashboard'));
@@ -84,6 +86,30 @@ const NEIGHBORHOODS: Record<string, NeighborhoodConfig> = {
         heroSubtitle: <p>Localização estratégica no <strong>Campo Belo</strong> com fácil acesso para <strong>Moema, Brooklin e Aeroporto</strong>. A clínica mais completa da região.</p>,
         seoTitle: "Podólogo Perto de Mim | Clínica Sandra Barreto Zona Sul",
         seoDesc: "Encontre a melhor podóloga perto de você na Zona Sul de SP. Atendimento especializado no Campo Belo, próximo a Moema e Brooklin."
+    },
+    'unha-encravada-perto-de-mim': {
+        heroTitle: <>Tratamento para <span className="text-brand-secondary">Unha Encravada</span> Perto de Você</>,
+        heroSubtitle: <p>Alívio imediato da dor com técnicas especializadas. Atendimento de emergência para <strong>unha inflamada e infeccionada</strong> no Campo Belo, perto de Moema.</p>,
+        seoTitle: "Unha Encravada Perto de Mim | Podologia de Emergência Zona Sul",
+        seoDesc: "Precisa de um especialista em unha encravada perto de você? Tratamento rápido e eficaz da dor e inflamação no Campo Belo, Zona Sul de SP."
+    },
+    'micose-unha-perto-de-mim': {
+        heroTitle: <>Tratamento para <span className="text-brand-secondary">Micose de Unha</span> Perto de Você</>,
+        heroSubtitle: <p>Solução definitiva para fungos nas unhas com <strong>tratamentos a laser e tópicos</strong>. Recupere a saúde e a aparência das suas unhas na nossa clínica no Campo Belo.</p>,
+        seoTitle: "Micose de Unha Perto de Mim | Tratamento a Laser Zona Sul SP",
+        seoDesc: "Busca tratamento para micose de unha (onicomicose) perto de você? Especialista em podologia com as melhores tecnologias no Campo Belo, SP."
+    },
+    'ortese-unha-perto-de-mim': {
+        heroTitle: <>Aplicação de <span className="text-brand-secondary">Órtese de Unha</span> Perto de Você</>,
+        heroSubtitle: <p>Corrija o formato da sua unha e evite que ela encrave novamente com a <strong>aplicação de órtese ungueal</strong>. Técnica indolor e eficaz.</p>,
+        seoTitle: "Órtese para Unha Encravada Perto de Mim | Podologia Zona Sul",
+        seoDesc: "Encontre aplicação de órtese para correção de unha perto de você. Tratamento preventivo para unha encravada no Campo Belo, próximo ao Brooklin."
+    },
+    'reflexologia-perto-de-mim': {
+        heroTitle: <>Sessão de <span className="text-brand-secondary">Reflexologia Podal</span> Perto de Você</>,
+        heroSubtitle: <p>Relaxe, alivie o estresse e equilibre seu corpo através da <strong>massagem terapêutica em pontos específicos dos pés</strong>. Uma experiência única de bem-estar.</p>,
+        seoTitle: "Reflexologia Podal Perto de Mim | Terapia e Massagem nos Pés",
+        seoDesc: "Procurando por uma sessão de reflexologia podal perto de você? Alivie dores e tensões com nossa terapeuta especializada no Campo Belo."
     }
 };
 
@@ -116,12 +142,13 @@ const MainContent: React.FC<MainContentProps> = ({
             <Locations />
             <Pricing />
             <Testimonials />
-            <CreatePost onAddPost={onAddPost} />
+            <InstagramFeed />
             <BlogSection posts={posts} />
             <Scheduling 
-            appointments={appointments} 
-            onAddAppointment={onAddAppointment}
+                appointments={appointments} 
+                onAddAppointment={onAddAppointment}
             />
+            <CreatePost onAddPost={onAddPost} />
             <ProfessionalRegistration />
             <FAQ />
         </Suspense>
@@ -213,8 +240,8 @@ const App: React.FC = () => {
     }
     // Default Home SEO - Updated to reflect High Demand for Manicure
     return { 
-        title: "Manicure e Podóloga na Zona Sul SP | Unhas de Gel e Podologia", 
-        desc: "Especialista em Unhas de Gel, Blindagem, Manicure e Podologia no Campo Belo, Moema e Itaim. Dra. Sandra Barreto: Estética e saúde para seus pés e mãos." 
+        title: "Hospital dos Pés: Podologia na Zona Sul SP | Unha Encravada e Micoses", 
+        desc: "Clínica de Podologia no Campo Belo (Hospital dos Pés). Tratamento para Unha Encravada, Micose, Órtese e Reflexologia. Atendimento perto de Moema e Itaim." 
     };
   };
 
@@ -241,14 +268,14 @@ const App: React.FC = () => {
                       heroSubtitle={currentLocationConfig?.heroSubtitle}
                     />;
         default:
-            // Default Home Content - Manicure First Priority
+            // Default Home Content - Updated "Hospital dos Pés" concept
             return <MainContent 
                       posts={posts} 
                       appointments={appointments}
                       onAddPost={handleAddPost}
                       onAddAppointment={handleAddAppointment}
-                      heroTitle={<>Manicure Premium e <span className="text-brand-secondary">Podologia</span><br/>na Zona Sul de SP</>}
-                      heroSubtitle={<p>Realce sua beleza com <strong>Unhas de Gel e Blindagem</strong> ou cuide da saúde dos seus pés. Atendimento no Campo Belo e Moema com biossegurança hospitalar.</p>}
+                      heroTitle={<>Hospital dos Pés: <span className="text-brand-secondary">Podologia Clínica</span><br/>na Zona Sul de SP</>}
+                      heroSubtitle={<p>Centro de excelência em saúde podal. Tratamentos especializados para <strong>Unha Encravada, Micoses, Órteses e Reflexologia</strong>. Cuidado e tecnologia para seus pés no Campo Belo.</p>}
                     />;
     }
   }
@@ -277,6 +304,7 @@ const App: React.FC = () => {
 
       {!isFullPageLayout && (
           <Suspense fallback={null}>
+            <SchedulingAssistant appointments={appointments} onAddAppointment={handleAddAppointment} />
             <WhatsAppButton />
             <Notification message={notification} onClose={handleCloseNotification} />
             {showCookieBanner && <CookieConsentBanner onAccept={handleAcceptCookies} />}

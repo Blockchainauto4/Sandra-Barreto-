@@ -25,6 +25,32 @@ export const DiabeticFootIcon = () => (
     </svg>
 );
 
+export const IngrownNailIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.5L15.232 5.232z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" strokeWidth={1.5} opacity={0.6} />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M17.5 15.5l-4-4" stroke="red" strokeWidth={2.5}/>
+    </svg>
+);
+
+
+export const NailBraceIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M4 19h16" />
+    </svg>
+);
+
+export const ReflexologyIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M7 15s1.5-2 5-2 5 2 5 2" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M8 11.5c.5.5 1.5.5 2 0" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M14 11.5c.5.5 1.5.5 2 0" />
+    </svg>
+);
+
+
 export const OrthoticsIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 19V6.24a3.24 3.24 0 013.24-3.24h0A3.24 3.24 0 0115.48 6.24V19" />
@@ -47,25 +73,35 @@ export const HandIcon = () => (
 // Services Data (Updated to include Manicure on Homepage)
 export const SERVICES_DATA: Service[] = [
     {
-        icon: <PolishIcon />,
-        title: "Manicure e Unhas de Gel",
-        description: "Esmaltação em gel, blindagem e design de unhas com biossegurança hospitalar. Atendimento no Campo Belo e Moema."
-    },
-    {
-        icon: <FootIcon />,
-        title: "Podologia Clínica",
-        description: "Tratamento completo para unhas, calos e calosidades, garantindo a saúde e o bem-estar dos seus pés."
-    },
-    {
-        icon: <DiabeticFootIcon />,
-        title: "Cuidado para Pés Diabéticos",
-        description: "Atendimento especializado e preventivo para pés de pessoas com diabetes, evitando complicações."
+        icon: <IngrownNailIcon />,
+        title: "Tratamento de Unha Encravada",
+        description: "Alívio imediato da dor e inflamação com técnicas modernas e seguras. Atendimento de emergência para infecções (onicocriptose)."
     },
     {
         icon: <NailIcon />,
         title: "Tratamento de Micoses",
-        description: "Soluções eficazes e modernas para o tratamento de fungos nas unhas (Onicomicose), recuperando a aparência saudável."
-    }
+        description: "Soluções eficazes com laserterapia e medicamentos para fungos nas unhas (Onicomicose), restaurando a saúde e estética."
+    },
+    {
+        icon: <NailBraceIcon />,
+        title: "Órtese Ungueal (Correção)",
+        description: "Aplicação de aparelho corretivo para prevenir o encravamento recorrente da unha, reeducando seu crescimento de forma indolor."
+    },
+    {
+        icon: <DiabeticFootIcon />,
+        title: "Cuidado para Pés Diabéticos",
+        description: "Atendimento especializado e preventivo para pés de pessoas com diabetes, evitando complicações e preservando a sensibilidade."
+    },
+    {
+        icon: <ReflexologyIcon />,
+        title: "Reflexologia Podal",
+        description: "Terapia de massagem que aplica pressão em pontos específicos dos pés para promover relaxamento, alívio de tensões e bem-estar geral."
+    },
+     {
+        icon: <FootIcon />,
+        title: "Podologia Clínica Geral",
+        description: "Tratamento completo para calos, calosidades, fissuras e ressecamento, garantindo a saúde e o conforto total dos seus pés."
+    },
 ];
 
 export const MANICURE_SERVICES_DATA: Service[] = [

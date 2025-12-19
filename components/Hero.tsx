@@ -12,8 +12,8 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
             className="relative text-brand-dark min-h-[60vh] md:min-h-[85vh] flex items-center overflow-hidden"
         >
             <img 
-                src="https://picsum.photos/1600/900?image=1073" 
-                alt="Consultório de Podologia"
+                src="https://picsum.photos/seed/modern-clinic/1600/900" 
+                alt="Consultório de Podologia moderno e limpo"
                 className="absolute inset-0 w-full h-full object-cover -z-20"
                 width="1600"
                 height="900"
