@@ -110,6 +110,24 @@ const NEIGHBORHOODS: Record<string, NeighborhoodConfig> = {
         heroSubtitle: <p>Relaxe, alivie o estresse e equilibre seu corpo através da <strong>massagem terapêutica em pontos específicos dos pés</strong>. Uma experiência única de bem-estar.</p>,
         seoTitle: "Reflexologia Podal Perto de Mim | Terapia e Massagem nos Pés",
         seoDesc: "Procurando por uma sessão de reflexologia podal perto de você? Alivie dores e tensões com nossa terapeuta especializada no Campo Belo."
+    },
+    'unha-de-gel-moema': {
+        heroTitle: <>Unhas de Gel em <span className="text-brand-secondary">Moema</span></>,
+        heroSubtitle: <p>Durabilidade e brilho para suas unhas com nossa técnica de <strong>esmaltação em gel e blindagem</strong>. Atendimento premium para a região de Moema, perto do <strong>Shopping Ibirapuera</strong>.</p>,
+        seoTitle: "Unhas de Gel em Moema | Manicure Especializada | Sandra Barreto",
+        seoDesc: "Procurando por unhas de gel em Moema? Especialista em blindagem e esmaltação em gel com alta durabilidade. Agende seu horário perto do Shopping Ibirapuera."
+    },
+    'reflexologia-brooklin': {
+        heroTitle: <>Reflexologia Podal no <span className="text-brand-secondary">Brooklin</span></>,
+        heroSubtitle: <p>Relaxe e reequilibre suas energias com uma sessão de <strong>reflexologia podal terapêutica</strong>. Alívio de estresse e dores para quem trabalha ou mora na região da <strong>Berrini e Brooklin</strong>.</p>,
+        seoTitle: "Reflexologia Podal no Brooklin | Massagem Terapêutica | Perto Berrini",
+        seoDesc: "Sessão de reflexologia podal no Brooklin, perto da Berrini. Alivie o estresse e dores com nossa massagem terapêutica especializada. Agende seu momento de bem-estar."
+    },
+    'spa-dos-pes-itaim-bibi': {
+        heroTitle: <>SPA dos Pés no <span className="text-brand-secondary">Itaim Bibi</span></>,
+        heroSubtitle: <p>Renove a saúde e a maciez dos seus pés com nosso <strong>SPA completo: esfoliação, hidratação profunda e massagem</strong>. Um cuidado essencial para quem vive a rotina agitada do <strong>Itaim Bibi e Faria Lima</strong>.</p>,
+        seoTitle: "SPA dos Pés no Itaim Bibi | Hidratação e Relaxamento | Podologia",
+        seoDesc: "Procurando um SPA dos Pés no Itaim Bibi? Oferecemos esfoliação, hidratação profunda e massagem relaxante. Devolva a maciez e o conforto aos seus pés."
     }
 };
 

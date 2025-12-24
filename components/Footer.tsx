@@ -38,12 +38,12 @@ const Footer: React.FC = () => {
                     <div>
                         <h5 className="text-lg font-bold text-white mb-3">Serviços na Região</h5>
                         <ul className="text-sm text-gray-400 space-y-1">
-                            <li><a href="#zona-sul" className="hover:text-white transition-colors font-semibold text-brand-primary">Manicure Zona Sul SP</a></li>
-                            <li><a href="#manicure" className="hover:text-white transition-colors">Unhas de Gel Campo Belo</a></li>
-                            <li><a href="#moema" className="hover:text-white transition-colors">Manicure e Podóloga em Moema</a></li>
-                            <li><a href="#brooklin" className="hover:text-white transition-colors">Blindagem de Unhas Brooklin</a></li>
-                            <li><a href="#itaim" className="hover:text-white transition-colors">Podóloga no Itaim Bibi</a></li>
-                            <li><a href="#campo-limpo" className="hover:text-white transition-colors">Podologia Campo Limpo</a></li>
+                            <li><a href="#unha-de-gel-moema" className="hover:text-white transition-colors font-semibold text-brand-primary">Unhas de Gel em Moema</a></li>
+                            <li><a href="#reflexologia-brooklin" className="hover:text-white transition-colors">Reflexologia no Brooklin</a></li>
+                            <li><a href="#spa-dos-pes-itaim-bibi" className="hover:text-white transition-colors">SPA dos Pés no Itaim Bibi</a></li>
+                            <li><a href="#unha-encravada-perto-de-mim" className="hover:text-white transition-colors">Unha Encravada Perto de Mim</a></li>
+                            <li><a href="#micose-unha-perto-de-mim" className="hover:text-white transition-colors">Micose de Unha Perto de Mim</a></li>
+                            <li><a href="#ortese-unha-perto-de-mim" className="hover:text-white transition-colors">Órtese de Unha Perto de Mim</a></li>
                         </ul>
                     </div>
 
