@@ -5,45 +5,43 @@ const Footer: React.FC = () => {
     return (
         <footer className="bg-gray-900 text-gray-200">
             <div className="container mx-auto px-6 py-12">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center md:text-left">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 text-center md:text-left">
                     
                     {/* Brand Info */}
-                    <div>
+                    <div className="lg:col-span-2">
                         <h4 className="text-xl font-serif font-bold text-white mb-2">Sandra Barreto</h4>
                         <address className="not-italic text-gray-400 text-sm leading-relaxed mb-4">
                             R. Vieira de Morais, 1466<br/>
                             Campo Belo, São Paulo - SP<br/>
                             CEP 04617-005
                         </address>
-                        <p className="text-xs text-gray-500 opacity-70 mb-4">Excelência em Unhas e Podologia</p>
+                        <p className="text-xs text-gray-500 opacity-70 mb-4">Clínica de Referência em SP & Portal Nacional de Podologia</p>
                         <a href="https://wa.me/5511952851860" target="_blank" rel="noopener noreferrer" className="text-brand-primary hover:text-white font-bold text-sm transition-colors">
                             (11) 95285-1860
                         </a>
                     </div>
 
-                    {/* Quick Links (Menu Fix) */}
+                    {/* Service Areas (SP) */}
                     <div>
-                        <h5 className="text-lg font-bold text-white mb-3">Links Rápidos</h5>
-                        <ul className="text-sm text-gray-400 space-y-1">
-                            <li><a href="/#" className="hover:text-white transition-colors">Início</a></li>
-                            <li><a href="#manicure" className="hover:text-white transition-colors font-medium text-brand-primary">Manicure e Gel</a></li>
-                            <li><a href="#servicos" className="hover:text-white transition-colors">Tratamentos</a></li>
-                            <li><a href="#sobre" className="hover:text-white transition-colors">Sobre Mim</a></li>
-                            <li><a href="#blog" className="hover:text-white transition-colors">Blog</a></li>
-                            <li><a href="#agendamento" className="hover:text-white transition-colors">Agendar Horário</a></li>
-                        </ul>
-                    </div>
-
-                    {/* Service Areas (Great for SEO) */}
-                    <div>
-                        <h5 className="text-lg font-bold text-white mb-3">Serviços na Região</h5>
+                        <h5 className="text-lg font-bold text-white mb-3">Serviços em SP</h5>
                         <ul className="text-sm text-gray-400 space-y-1">
                             <li><a href="#unha-de-gel-moema" className="hover:text-white transition-colors font-semibold text-brand-primary">Unhas de Gel em Moema</a></li>
                             <li><a href="#reflexologia-brooklin" className="hover:text-white transition-colors">Reflexologia no Brooklin</a></li>
-                            <li><a href="#spa-dos-pes-itaim-bibi" className="hover:text-white transition-colors">SPA dos Pés no Itaim Bibi</a></li>
                             <li><a href="#unha-encravada-perto-de-mim" className="hover:text-white transition-colors">Unha Encravada Perto de Mim</a></li>
                             <li><a href="#micose-unha-perto-de-mim" className="hover:text-white transition-colors">Micose de Unha Perto de Mim</a></li>
                             <li><a href="#ortese-unha-perto-de-mim" className="hover:text-white transition-colors">Órtese de Unha Perto de Mim</a></li>
+                        </ul>
+                    </div>
+
+                    {/* National Guides */}
+                    <div>
+                        <h5 className="text-lg font-bold text-white mb-3">Guias por Estado</h5>
+                        <ul className="text-sm text-gray-400 space-y-1">
+                            <li><a href="#parana" className="hover:text-white transition-colors">Podologia no Paraná</a></li>
+                            <li><a href="#rio-de-janeiro" className="hover:text-white transition-colors">Podologia no Rio de Janeiro</a></li>
+                            <li><a href="#rio-grande-do-sul" className="hover:text-white transition-colors">Podologia no RS</a></li>
+                            <li><a href="#goias" className="hover:text-white transition-colors">Podologia em Goiás</a></li>
+                            <li><a href="#distrito-federal" className="hover:text-white transition-colors">Podologia no DF</a></li>
                         </ul>
                     </div>
 

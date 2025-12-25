@@ -45,3 +45,8 @@ export interface PricingItem {
   indication: string;
   price: string;
 }
+
+export interface LocationItem {
+  name: string;
+  detail: string;
+}
