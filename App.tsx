@@ -53,6 +53,13 @@ type LocationConfig = {
 };
 
 const LOCATION_CONFIGS: Record<string, LocationConfig> = {
+    // HIGH-INTENT Landing Page
+    'podologa-perto-de-mim': {
+        heroTitle: <>Encontrou sua <span className="text-brand-secondary">Podóloga Perto de Mim</span></>,
+        heroSubtitle: <p>Atendimento especializado no coração da Zona Sul, no <strong>Campo Belo</strong>. Acesso rápido para <strong>Moema, Brooklin e Itaim</strong>. Agende e alivie suas dores hoje mesmo.</p>,
+        seoTitle: "Podóloga Perto de Mim | Atendimento Zona Sul SP (Campo Belo)",
+        seoDesc: "Procurando uma podóloga perto de você? Atendimento de emergência para unha encravada e tratamentos no Campo Belo, perto de Moema e Brooklin. Agende."
+    },
     // São Paulo Neighborhoods
     'moema': {
         heroTitle: <>Manicure e Podologia em <span className="text-brand-secondary">Moema</span></>,
@@ -312,8 +319,8 @@ const App: React.FC = () => {
     }
     // Default Home SEO - Updated to reflect High Demand for Manicure
     return { 
-        title: "Hospital dos Pés: Podologia na Zona Sul SP | Unha Encravada e Micoses", 
-        desc: "Clínica de Podologia no Campo Belo (Hospital dos Pés). Tratamento para Unha Encravada, Micose, Órtese e Reflexologia. Atendimento perto de Moema e Itaim." 
+        title: "Podóloga Perto de Mim no Campo Belo, Moema | Sandra Barreto (Zona Sul SP)", 
+        desc: "Encontrou! ✅ Podóloga especialista no Campo Belo, com acesso fácil para Moema e Brooklin. Tratamento para unha encravada, micose e pés diabéticos. Agende agora!" 
     };
   };
 
@@ -341,14 +348,14 @@ const App: React.FC = () => {
                       locationsList={currentLocationConfig?.locationsList}
                     />;
         default:
-            // Default Home Content - Updated "Hospital dos Pés" concept
+            // Default Home Content - Updated "Perto de Mim" concept
             return <MainContent 
                       posts={posts} 
                       appointments={appointments}
                       onAddPost={handleAddPost}
                       onAddAppointment={handleAddAppointment}
-                      heroTitle={<>Hospital dos Pés: <span className="text-brand-secondary">Podologia Clínica</span><br/>na Zona Sul de SP</>}
-                      heroSubtitle={<p>Centro de excelência em saúde podal. Tratamentos especializados para <strong>Unha Encravada, Micoses, Órteses e Reflexologia</strong>. Cuidado e tecnologia para seus pés no Campo Belo.</p>}
+                      heroTitle={<>Podóloga Perto de Você: <br className="hidden md:block" /><span className="text-brand-primary">Atendimento Especializado</span> na Zona Sul</>}
+                      heroSubtitle={<p>Sua busca por <strong>"podóloga perto de mim"</strong> termina aqui. Atendimento clínico no <strong>Campo Belo</strong> com acesso rápido para <strong>Moema e Brooklin</strong>. Alívio para unha encravada, micoses e mais. Agende sua consulta.</p>}
                     />;
     }
   }

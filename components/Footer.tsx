@@ -25,11 +25,11 @@ const Footer: React.FC = () => {
                     <div>
                         <h5 className="text-lg font-bold text-white mb-3">Serviços em SP</h5>
                         <ul className="text-sm text-gray-400 space-y-1">
-                            <li><a href="#unha-de-gel-moema" className="hover:text-white transition-colors font-semibold text-brand-primary">Unhas de Gel em Moema</a></li>
+                             <li><a href="#podologa-perto-de-mim" className="hover:text-white transition-colors font-semibold text-brand-primary">Podóloga Perto de Mim</a></li>
+                            <li><a href="#unha-de-gel-moema" className="hover:text-white transition-colors">Unhas de Gel em Moema</a></li>
                             <li><a href="#reflexologia-brooklin" className="hover:text-white transition-colors">Reflexologia no Brooklin</a></li>
                             <li><a href="#unha-encravada-perto-de-mim" className="hover:text-white transition-colors">Unha Encravada Perto de Mim</a></li>
                             <li><a href="#micose-unha-perto-de-mim" className="hover:text-white transition-colors">Micose de Unha Perto de Mim</a></li>
-                            <li><a href="#ortese-unha-perto-de-mim" className="hover:text-white transition-colors">Órtese de Unha Perto de Mim</a></li>
                         </ul>
                     </div>
 
