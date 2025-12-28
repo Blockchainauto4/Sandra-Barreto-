@@ -317,10 +317,10 @@ const App: React.FC = () => {
             desc: "Esmaltação em Gel, Blindagem e SPA dos Pés com biossegurança (Autoclave). Manicure perto do Aeroporto de Congonhas e Shopping Ibirapuera. Agende!" 
         };
     }
-    // Default Home SEO - Updated to reflect High Demand for Manicure
+    // Default Home SEO - Updated for CTR Optimization
     return { 
-        title: "Podóloga Perto de Mim no Campo Belo, Moema | Sandra Barreto (Zona Sul SP)", 
-        desc: "Encontrou! ✅ Podóloga especialista no Campo Belo, com acesso fácil para Moema e Brooklin. Tratamento para unha encravada, micose e pés diabéticos. Agende agora!" 
+        title: "Podóloga Perto de Mim (Zona Sul SP) | Sandra Barreto | Nota 5.0 ⭐", 
+        desc: "Sua busca por \"podóloga perto de mim\" acabou! ✅ Atendimento 5 estrelas no Campo Belo (fácil acesso p/ Moema e Brooklin). Alívio para unha encravada, micoses e mais. Agende online!" 
     };
   };
 
