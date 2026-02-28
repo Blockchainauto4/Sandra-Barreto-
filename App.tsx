@@ -43,7 +43,7 @@ const SectionLoader = () => (
 );
 
 // --- LOCATION CONFIGURATION SYSTEM ---
-// Now supports neighborhoods, cities, and states for national SEO
+// Supports neighborhoods and specific service landing pages for local SEO
 type LocationConfig = {
     heroTitle: React.ReactNode;
     heroSubtitle: React.ReactNode;
@@ -57,135 +57,64 @@ const LOCATION_CONFIGS: Record<string, LocationConfig> = {
     'podologa-perto-de-mim': {
         heroTitle: <>Encontrou sua <span className="text-brand-secondary">Podóloga Perto de Mim</span></>,
         heroSubtitle: <p>Atendimento especializado no coração da Zona Sul, no <strong>Campo Belo</strong>. Acesso rápido para <strong>Moema, Brooklin e Itaim</strong>. Agende e alivie suas dores hoje mesmo.</p>,
-        seoTitle: "Podóloga Perto de Mim | Atendimento Zona Sul SP (Campo Belo)",
-        seoDesc: "Procurando uma podóloga perto de você? Atendimento de emergência para unha encravada e tratamentos no Campo Belo, perto de Moema e Brooklin. Agende."
+        seoTitle: "Podóloga Perto de Mim em Campo Belo • Sandra Barreto • Atendimento Já",
+        seoDesc: "Procurando podóloga perto de você? Dra. Sandra Barreto atende no Campo Belo e região com foco em alívio imediato de dores e unhas encravadas. Agende!"
     },
     // São Paulo Neighborhoods
     'moema': {
         heroTitle: <>Manicure e Podologia em <span className="text-brand-secondary">Moema</span></>,
         heroSubtitle: <p>Atendimento de referência para <strong>Unhas de Gel e Podologia</strong> em Moema e região do <strong>Shopping Ibirapuera</strong>. Biossegurança e conforto.</p>,
-        seoTitle: "Manicure e Podóloga em Moema | Unha Encravada e Gel | Dra. Sandra",
-        seoDesc: "Procurando Manicure ou Podóloga em Moema? Especialista em unhas de gel, blindagem e tratamento de pé diabético. Agende sua consulta!"
+        seoTitle: "Podóloga em Moema • Sandra Barreto • Unha Encravada e Tratamentos",
+        seoDesc: "Atendimento especializado em podologia e manicure para moradores de Moema. Tratamento de micose, calos e unhas de gel com biossegurança. Agende sua visita!"
     },
     'campo-limpo': {
         heroTitle: <>Podologia para o <span className="text-brand-secondary">Campo Limpo</span> e Região</>,
         heroSubtitle: <p>Sua saúde começa pelos pés! Atendimento de qualidade acessível para moradores do <strong>Campo Limpo, Vila das Belezas, Jardim Sul e Horto do Ypê</strong>. Livre-se da dor da unha encravada hoje mesmo.</p>,
-        seoTitle: "Podóloga no Campo Limpo e Jardim Sul | Dra. Sandra Barreto",
-        seoDesc: "Podologia especializada atendendo moradores do Campo Limpo, Vila das Belezas, Jardim Sul e Horto do Ypê. Tratamento de unhas, calos e micoses."
+        seoTitle: "Podóloga no Campo Limpo • Sandra Barreto • Saúde para seus Pés",
+        seoDesc: "Podologia clínica atendendo a região do Campo Limpo e Jardim Sul. Especialista em tratamento de unhas e calosidades. Atendimento domiciliar disponível!"
     },
     'itaim': {
         heroTitle: <>Podologia e Unhas no <span className="text-brand-secondary">Itaim Bibi</span></>,
         heroSubtitle: <p>Excelência em cuidados com os pés e mãos para quem vive ou trabalha no <strong>Itaim Bibi</strong> e arredores. Biossegurança total e atendimento pontual.</p>,
-        seoTitle: "Podóloga e Manicure no Itaim Bibi | Dra. Sandra Barreto",
-        seoDesc: "Clínica de Podologia e Manicure próxima ao Itaim Bibi. Especialista em calosidades, unhas de gel e podologia esportiva. Atendimento exclusivo."
+        seoTitle: "Podóloga no Itaim Bibi • Sandra Barreto • Atendimento Especializado",
+        seoDesc: "Cuidados profissionais para seus pés no Itaim Bibi. Especialista em podologia esportiva e tratamentos clínicos. Agende seu horário no consultório ou domicílio."
     },
     'brooklin': {
         heroTitle: <>Sua Manicure e Podóloga no <span className="text-brand-secondary">Brooklin</span></>,
         heroSubtitle: <p>Conforto e beleza para mãos e pés no coração do <strong>Brooklin</strong> e região da <strong>Berrini</strong>. Tratamentos estéticos e clínicos com especialista qualificada.</p>,
-        seoTitle: "Manicure e Podóloga no Brooklin | Zona Sul SP",
-        seoDesc: "Podologia e Unhas de Gel no Brooklin e Berrini. Tratamento para unha encravada e SPA dos pés. Agende sua avaliação com a Dra. Sandra Barreto."
+        seoTitle: "Podóloga no Brooklin • Sandra Barreto • Unhas de Gel e Podologia",
+        seoDesc: "Tratamentos completos de podologia e estética no Brooklin. Unha encravada, calos e unhas de gel com especialista. Agende agora seu atendimento!"
     },
     'zona-sul': {
         heroTitle: <>Manicure e Podologia na <span className="text-brand-secondary">Zona Sul de SP</span></>,
         heroSubtitle: <p>Clínica bem localizada para quem busca <strong>"Manicure perto de mim"</strong>. Fácil acesso via Av. Roberto Marinho. Atendimento para <strong>Campo Belo, Moema e Região</strong>.</p>,
-        seoTitle: "Manicure e Podóloga Perto de Mim | Zona Sul SP | Sandra Barreto",
-        seoDesc: "Procurando manicure e podóloga na Zona Sul? Localização central no Campo Belo. Unhas de gel, blindagem e tratamentos especializados."
+        seoTitle: "Podóloga na Zona Sul de SP • Sandra Barreto • Campo Belo e Região",
+        seoDesc: "A melhor opção em podologia na Zona Sul. Atendimento no Campo Belo, Moema e Brooklin. Especialista em saúde dos pés e unhas. Agende sua consulta!"
     },
     'perto-de-mim': {
         heroTitle: <>Podóloga <span className="text-brand-secondary">Perto de Você</span></>,
-        heroSubtitle: <p>Localização estratégica no <strong>Campo Belo</strong> com fácil acesso para <strong>Moema, Brooklin e Aeroporto</strong>. A clínica mais completa da região.</p>,
-        seoTitle: "Podólogo Perto de Mim | Clínica Sandra Barreto Zona Sul",
-        seoDesc: "Encontre a melhor podóloga perto de você na Zona Sul de SP. Atendimento especializado no Campo Belo, próximo a Moema e Brooklin."
+        heroSubtitle: <p>Localização estratégica no <strong>Campo Belo</strong> with fácil acesso para <strong>Moema, Brooklin e Aeroporto</strong>. A clínica mais completa da região.</p>,
+        seoTitle: "Podóloga Perto de Mim • Sandra Barreto • Atendimento no Campo Belo",
+        seoDesc: "Encontre alívio para dores nos pés com a Dra. Sandra Barreto. Atendimento especializado próximo a você no Campo Belo, Moema e Brooklin. Agende!"
     },
     // Service-specific Landing Pages
     'unha-encravada-perto-de-mim': {
         heroTitle: <>Tratamento para <span className="text-brand-secondary">Unha Encravada</span> Perto de Você</>,
         heroSubtitle: <p>Alívio imediato da dor com técnicas especializadas. Atendimento de emergência para <strong>unha inflamada e infeccionada</strong> no Campo Belo, perto de Moema.</p>,
-        seoTitle: "Unha Encravada Perto de Mim | Podologia de Emergência Zona Sul",
-        seoDesc: "Precisa de um especialista em unha encravada perto de você? Tratamento rápido e eficaz da dor e inflamação no Campo Belo, Zona Sul de SP."
+        seoTitle: "Tratamento de Unha Encravada em Campo Belo • Sandra Barreto • Alívio Já",
+        seoDesc: "Dor na unha? Especialista em unha encravada com atendimento de emergência no Campo Belo e Zona Sul. Alívio imediato e técnicas indolores. Agende!"
     },
     'unha-de-gel-moema': {
         heroTitle: <>Unhas de Gel em <span className="text-brand-secondary">Moema</span></>,
         heroSubtitle: <p>Durabilidade e brilho para suas unhas com nossa técnica de <strong>esmaltação em gel e blindagem</strong>. Atendimento premium para a região de Moema, perto do <strong>Shopping Ibirapuera</strong>.</p>,
-        seoTitle: "Unhas de Gel em Moema | Manicure Especializada | Sandra Barreto",
-        seoDesc: "Procurando por unhas de gel em Moema? Especialista em blindagem e esmaltação em gel com alta durabilidade. Agende seu horário perto do Shopping Ibirapuera."
+        seoTitle: "Unhas de Gel em Moema • Sandra Barreto • Blindagem e Esmaltação",
+        seoDesc: "Unhas perfeitas e duradouras em Moema. Especialista em unhas de gel e blindagem com máxima biossegurança. Agende seu horário premium hoje!"
     },
     'reflexologia-brooklin': {
         heroTitle: <>Reflexologia Podal no <span className="text-brand-secondary">Brooklin</span></>,
         heroSubtitle: <p>Relaxe e reequilibre suas energias com uma sessão de <strong>reflexologia podal terapêutica</strong>. Alívio de estresse e dores para quem trabalha ou mora na região da <strong>Berrini e Brooklin</strong>.</p>,
-        seoTitle: "Reflexologia Podal no Brooklin | Massagem Terapêutica | Perto Berrini",
-        seoDesc: "Sessão de reflexologia podal no Brooklin, perto da Berrini. Alivie o estresse e dores com nossa massagem terapêutica especializada. Agende seu momento de bem-estar."
-    },
-    // National SEO Landing Pages
-    'parana': {
-        heroTitle: <>Guia de Podologia no <span className="text-brand-secondary">Paraná</span></>,
-        heroSubtitle: <p>Informações e dicas sobre saúde dos pés, tratamentos para <strong>unha encravada e micoses</strong> para moradores de <strong>Curitiba, Londrina</strong> e todo o estado do Paraná.</p>,
-        seoTitle: "Podologia no Paraná (PR) | Guia de Clínicas e Tratamentos em Curitiba",
-        seoDesc: "Encontre informações sobre podologia no Paraná. Dicas para tratamento de unha encravada, micose e saúde dos pés em Curitiba, Londrina, Maringá e região.",
-        locationsList: [
-            { name: "Curitiba", detail: "Capital do Estado" },
-            { name: "Londrina", detail: "Norte do Paraná" },
-            { name: "Maringá", detail: "Noroeste Paranaense" },
-            { name: "Foz do Iguaçu", detail: "Região da Fronteira" },
-            { name: "Cascavel", detail: "Oeste Paranaense" },
-            { name: "Ponta Grossa", detail: "Campos Gerais" },
-        ]
-    },
-    'rio-de-janeiro': {
-        heroTitle: <>Podologia no Estado do <span className="text-brand-secondary">Rio de Janeiro</span></>,
-        heroSubtitle: <p>Um guia completo sobre cuidados com os pés, incluindo <strong>podologia esportiva e tratamentos a laser</strong>, para a <strong>capital, Niterói, Baixada Fluminense</strong> e todo o RJ.</p>,
-        seoTitle: "Podologia no Rio de Janeiro (RJ) | Tratamentos na Capital, Niterói e Baixada",
-        seoDesc: "Guia de podologia para o Rio de Janeiro. Saiba mais sobre tratamentos para calos, micoses e pés diabéticos na capital, Niterói, São Gonçalo e Baixada.",
-        locationsList: [
-            { name: "Rio de Janeiro (Capital)", detail: "Zona Sul, Barra, Centro" },
-            { name: "Niterói", detail: "Região Metropolitana" },
-            { name: "São Gonçalo", detail: "Região Metropolitana" },
-            { name: "Duque de Caxias", detail: "Baixada Fluminense" },
-            { name: "Nova Iguaçu", detail: "Baixada Fluminense" },
-            { name: "Campos dos Goytacazes", detail: "Norte Fluminense" },
-        ]
-    },
-    'rio-grande-do-sul': {
-        heroTitle: <>Saúde dos Pés no <span className="text-brand-secondary">Rio Grande do Sul</span></>,
-        heroSubtitle: <p>Informações valiosas sobre <strong>prevenção e tratamento de afecções nos pés</strong>, direcionado para os gaúchos de <strong>Porto Alegre, Caxias do Sul</strong> e outras cidades.</p>,
-        seoTitle: "Podologia no Rio Grande do Sul (RS) | Porto Alegre e Caxias do Sul",
-        seoDesc: "Tudo sobre saúde dos pés no Rio Grande do Sul. Informações sobre podólogos e tratamentos em Porto Alegre, Caxias do Sul, Pelotas e Santa Maria.",
-        locationsList: [
-            { name: "Porto Alegre", detail: "Capital Gaúcha" },
-            { name: "Caxias do Sul", detail: "Serra Gaúcha" },
-            { name: "Pelotas", detail: "Zona Sul do Estado" },
-            { name: "Canoas", detail: "Região Metropolitana" },
-            { name: "Santa Maria", detail: "Centro do Estado" },
-            { name: "Passo Fundo", detail: "Norte Gaúcho" },
-        ]
-    },
-    'goias': {
-        heroTitle: <>Guia de Podologia em <span className="text-brand-secondary">Goiás</span></>,
-        heroSubtitle: <p>Descubra a importância dos <strong>cuidados com os pés diabéticos</strong> e outros tratamentos podológicos. Informações para moradores de <strong>Goiânia, Anápolis</strong> e região.</p>,
-        seoTitle: "Podologia em Goiás (GO) | Dicas para Goiânia e Anápolis",
-        seoDesc: "Portal de informações sobre podologia em Goiás. Dicas de saúde para os pés, tratamentos e cuidados para moradores de Goiânia, Anápolis e Aparecida de Goiânia.",
-         locationsList: [
-            { name: "Goiânia", detail: "Capital do Estado" },
-            { name: "Aparecida de Goiânia", detail: "Região Metropolitana" },
-            { name: "Anápolis", detail: "Centro Goiano" },
-            { name: "Rio Verde", detail: "Sudoeste Goiano" },
-            { name: "Luziânia", detail: "Entorno do DF" },
-            { name: "Catalão", detail: "Sudeste Goiano" },
-        ]
-    },
-    'distrito-federal': {
-        heroTitle: <>Cuidados Podológicos no <span className="text-brand-secondary">Distrito Federal</span></>,
-        heroSubtitle: <p>Artigos e dicas de especialistas sobre <strong>saúde dos pés, órteses e reflexologia</strong> para quem vive em <strong>Brasília, Taguatinga</strong> e cidades satélites.</p>,
-        seoTitle: "Podologia no Distrito Federal (DF) | Brasília e Cidades Satélites",
-        seoDesc: "Informações essenciais de podologia para o Distrito Federal. Saiba mais sobre tratamentos e cuidados com os pés em Brasília, Taguatinga, Ceilândia e Guará.",
-        locationsList: [
-            { name: "Brasília (Plano Piloto)", detail: "Capital Federal" },
-            { name: "Taguatinga", detail: "Região Administrativa" },
-            { name: "Ceilândia", detail: "Região Administrativa" },
-            { name: "Guará", detail: "Região Administrativa" },
-            { name: "Águas Claras", detail: "Região Administrativa" },
-            { name: "Gama", detail: "Região Administrativa" },
-        ]
+        seoTitle: "Reflexologia Podal no Brooklin • Sandra Barreto • Bem-estar e Saúde",
+        seoDesc: "Reduza o estresse e melhore sua saúde com reflexologia podal no Brooklin. Massagem terapêutica especializada para alívio de tensões. Agende sua sessão!"
     },
 };
 
@@ -313,14 +242,14 @@ const App: React.FC = () => {
     if (currentPage === 'manicure') {
         // Optimized Local SEO for Manicure
         return { 
-            title: "Manicure e Unha de Gel em Campo Belo, Moema e Brooklin | Sandra Barreto", 
-            desc: "Esmaltação em Gel, Blindagem e SPA dos Pés com biossegurança (Autoclave). Manicure perto do Aeroporto de Congonhas e Shopping Ibirapuera. Agende!" 
+            title: "Manicure e Unhas de Gel em Campo Belo • Sandra Barreto • Agende seu Horário", 
+            desc: "Unhas de gel, blindagem e esmaltação premium com biossegurança total. Atendimento especializado no Campo Belo, Moema e Brooklin. Clique para agendar!" 
         };
     }
     // Default Home SEO - Updated for CTR Optimization
     return { 
-        title: "Podóloga Perto de Mim (Zona Sul SP) | Sandra Barreto | Nota 5.0 ⭐", 
-        desc: "Sua busca por \"podóloga perto de mim\" acabou! ✅ Atendimento 5 estrelas no Campo Belo (fácil acesso p/ Moema e Brooklin). Alívio para unha encravada, micoses e mais. Agende online!" 
+        title: "Podóloga Sandra Barreto em Campo Belo • Atendimento Domiciliar e no Consultório", 
+        desc: "Especialista em podologia clínica na Zona Sul de SP. Atendimento para unha encravada, micoses e pé diabético no Campo Belo, Moema e Brooklin. Agende agora!" 
     };
   };
 

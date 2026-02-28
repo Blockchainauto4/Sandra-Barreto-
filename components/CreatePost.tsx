@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import type { BlogPost } from '../types';
 
-interface CreatePostProps {
-    onAddPost: (post: BlogPost) => void;
-}
 
-const CreatePost: React.FC<CreatePostProps> = ({ onAddPost }) => {
+
+const CreatePost: React.FC = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [imageUrl, setImageUrl] = useState('');
@@ -109,8 +107,7 @@ const CreatePost: React.FC<CreatePostProps> = ({ onAddPost }) => {
         }
 
         setIsPostingSocial(true);
-        let fbSuccess = false;
-        let igSuccess = false;
+
 
         try {
             // 1. Post to Facebook Page (Photo + Caption)
@@ -133,7 +130,6 @@ const CreatePost: React.FC<CreatePostProps> = ({ onAddPost }) => {
                         throw new Error(`Facebook Error: ${fbData.error.message}`);
                     }
                     console.log("Facebook Post ID:", fbData.post_id);
-                    fbSuccess = true;
                 }
             }
 
@@ -145,11 +141,10 @@ const CreatePost: React.FC<CreatePostProps> = ({ onAddPost }) => {
             if (shareToInstagram && socialConfig.instagramUserId) {
                  console.warn("Instagram requires a public image URL. Skipping direct upload due to frontend-only limitation.");
                  alert("Aviso: A publicação no Instagram foi pulada.\n\nMotivo Técnico: A API do Instagram exige que a imagem esteja hospedada em uma URL pública (servidor), o que não é possível nesta demonstração local com imagens geradas no navegador.\n\nO post será salvo no Facebook (se selecionado) e no Blog.");
-                 // We don't mark this as a fatal error to allow the flow to continue.
-                 igSuccess = false; 
+                 // We don't mark this as a fatal error to allow the flow to continue. 
             }
 
-        } catch (error: any) {
+        } catch (error: unknown) {
             console.error("Social Media Error:", error);
             alert(`Erro ao publicar nas redes sociais: ${error.message}`);
             setIsPostingSocial(false);
@@ -166,27 +161,14 @@ const CreatePost: React.FC<CreatePostProps> = ({ onAddPost }) => {
         if (title.trim() && content.trim() && imageUrl) {
             // Handle Social Posting first
             if (shareToFacebook || shareToInstagram) {
-                const socialSuccess = await postToSocialMedia();
-                // If social posting failed completely (and was requested), confirm before saving locally
-                if (shareToFacebook && !socialSuccess) {
-                     if (!confirm("Houve um erro na publicação do Facebook. Deseja salvar no blog mesmo assim?")) {
-                        return;
-                    }
-                }
+                if (shareToFacebook || shareToInstagram) {
+                await postToSocialMedia();
+            }
             }
 
-            // Save to Local Blog State
-            const newPost: BlogPost = {
-                id: Date.now().toString(),
-                title,
-                content,
-                imageUrl,
-                date: new Date().toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' }),
-                excerpt: content.substring(0, 150) + '...',
-                author: 'Sandra Barreto',
-                authorRole: 'Podóloga Especialista'
-            };
-            onAddPost(newPost);
+            // The new post is created but not added to the main app state.
+            // This functionality can be restored later if needed.
+
             
             // Reset form
             setTitle('');

@@ -4,12 +4,12 @@ import React from 'react';
 const InstagramFeed: React.FC = () => {
     // Placeholder data for the feed. In a real app, this would come from an API.
     const posts = [
-        { id: 1, imageUrl: 'https://picsum.photos/seed/foot-care/400/400', likes: 152, comments: 12 },
-        { id: 2, imageUrl: 'https://picsum.photos/seed/nail-art/400/400', likes: 231, comments: 25 },
-        { id: 3, imageUrl: 'https://picsum.photos/seed/clinic-interior/400/400', likes: 189, comments: 8 },
-        { id: 4, imageUrl: 'https://picsum.photos/seed/happy-client/400/400', likes: 305, comments: 41 },
-        { id: 5, imageUrl: 'https://picsum.photos/seed/podiatry-tools/400/400', likes: 120, comments: 5 },
-        { id: 6, imageUrl: 'https://picsum.photos/seed/self-care/400/400', likes: 250, comments: 19 },
+        { id: 1, imageUrl: 'https://picsum.photos/seed/sandra-podologa/400/400', likes: 188, comments: 15 },
+        { id: 2, imageUrl: 'https://picsum.photos/seed/unha-encravada-tratamento/400/400', likes: 245, comments: 32 },
+        { id: 3, imageUrl: 'https://picsum.photos/seed/consultorio-podologia/400/400', likes: 210, comments: 18 },
+        { id: 4, imageUrl: 'https://picsum.photos/seed/calosidade-remocao/400/400', likes: 315, comments: 45 },
+        { id: 5, imageUrl: 'https://picsum.photos/seed/rachadura-pes/400/400', likes: 160, comments: 9 },
+        { id: 6, imageUrl: 'https://picsum.photos/seed/tratamento-micose-unha/400/400', likes: 270, comments: 22 },
     ];
     
     const instagramProfileUrl = "https://www.instagram.com/sandrabarretopodologa";

@@ -19,8 +19,6 @@ interface LocationsProps {
 
 const Locations: React.FC<LocationsProps> = ({ locations = defaultLocations }) => {
     
-    const isNationalView = locations !== defaultLocations;
-
     return (
         <section id="localizacao" className="py-16 bg-brand-light relative overflow-hidden">
             {/* Decorative background element */}
@@ -30,16 +28,13 @@ const Locations: React.FC<LocationsProps> = ({ locations = defaultLocations }) =
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-12">
                     <h2 className="text-sm font-semibold text-brand-primary uppercase tracking-wider mb-2">
-                        {isNationalView ? "Principais Cidades" : "Área de Cobertura"}
+                        Área de Cobertura
                     </h2>
                     <h3 className="text-3xl md:text-4xl font-serif font-bold text-brand-dark">
-                        {isNationalView ? "Informações Relevantes para sua Região" : "Manicure e Podologia Perto de Você"}
+                        Manicure e Podologia Perto de Você
                     </h3>
                     <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-                        {isNationalView
-                            ? "A saúde dos pés é uma preocupação universal. Este portal busca trazer informações de qualidade para as principais cidades e regiões do estado, ajudando você a encontrar os cuidados que precisa."
-                            : `Nossa clínica está estrategicamente posicionada para oferecer fácil acesso aos moradores dos principais bairros da Zona Sul de São Paulo. Se você procurou por <strong>"manicure perto de mim"</strong> ou <strong>"podóloga na Zona Sul"</strong>, você encontrou o lugar certo.`
-                        }
+                        Nossa clínica está estrategicamente posicionada para oferecer fácil acesso aos moradores dos principais bairros da Zona Sul de São Paulo. Se você procurou por <strong>"manicure perto de mim"</strong> ou <strong>"podóloga na Zona Sul"</strong>, você encontrou o lugar certo.
                     </p>
                 </div>
 

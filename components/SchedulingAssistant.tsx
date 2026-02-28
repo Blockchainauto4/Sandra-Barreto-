@@ -1,6 +1,6 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { GoogleGenAI, Type } from "@google/genai";
+import { GoogleGenAI } from "@google/genai";
 import { Appointment } from '../types';
 import { SERVICES_DATA, MANICURE_SERVICES_DATA } from '../constants';
 

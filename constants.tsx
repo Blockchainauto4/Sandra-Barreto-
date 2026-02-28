@@ -222,6 +222,16 @@ export const MANICURE_FAQ_DATA: FAQItem[] = [
 // Blog Posts Data
 export const BLOG_POSTS_DATA: BlogPost[] = [
     {
+        id: '4',
+        title: 'Quanto custa podologia em Campo Belo 2026: Guia de Preços',
+        content: 'Se você está procurando saber "quanto custa podologia em Campo Belo em 2026", este guia é para você. Os valores de uma consulta de podologia na Zona Sul de São Paulo podem variar dependendo da complexidade do caso e da experiência do profissional. Em média, um atendimento de podologia clínica tradicional (que inclui corte técnico, desbaste de calos e hidratação) varia entre R$ 120,00 e R$ 160,00. Procedimentos específicos, como o tratamento de unha encravada com curativo, podem variar de R$ 150,00 a R$ 250,00. Na clínica da Dra. Sandra Barreto, priorizamos a transparência e a biossegurança, utilizando materiais 100% esterilizados em autoclave. Investir na saúde dos seus pés é prevenir dores futuras e garantir qualidade de vida.',
+        imageUrl: 'https://picsum.photos/seed/pricing/800/600',
+        date: '28 de Fevereiro, 2026',
+        excerpt: 'Descubra os valores médios de tratamentos podológicos no Campo Belo para 2026. Saiba quanto custa cuidar da saúde dos seus pés com especialistas.',
+        author: 'Sandra Barreto',
+        authorRole: 'Podóloga Especialista'
+    },
+    {
         id: '3',
         title: 'Qual clínica de podólogo mais perto de mim na Zona Sul?',
         content: 'Muitos pacientes chegam ao nosso consultório após pesquisarem no Google por "podólogo perto de mim". A conveniência é fundamental, especialmente quando se trata de dores agudas como unha encravada. Nossa clínica está estrategicamente situada no Campo Belo, oferecendo acesso rápido para moradores de Moema (via Ibirapuera), Brooklin (via Roberto Marinho) e Vila Olímpia. Além da proximidade, oferecemos estacionamento e horários flexíveis. Não escolha apenas pelo mais próximo, escolha pela segurança e higiene que a Dra. Sandra Barreto oferece.',

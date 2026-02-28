@@ -16,15 +16,15 @@ const Notification: React.FC<NotificationProps> = ({ message, onClose }) => {
             }, 5000); // Auto-dismiss after 5 seconds
             return () => clearTimeout(timer);
         }
-    }, [message]);
+    }, [message, handleClose, onClose]);
 
-    const handleClose = () => {
+    const handleClose = useCallback(() => {
         setIsVisible(false);
         // Allow time for fade-out animation before clearing the message
         setTimeout(() => {
             onClose();
         }, 300);
-    };
+    }, [onClose]);
 
     if (!message) return null;
 

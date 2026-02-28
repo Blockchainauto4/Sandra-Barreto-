@@ -22,7 +22,7 @@ const TermsOfService: React.FC = () => {
             <p>O sistema de agendamento online permite que você solicite um horário. Este agendamento é uma pré-reserva e está sujeito a confirmação por nossa equipe, que entrará em contato através dos dados fornecidos por você. A disponibilidade exibida é em tempo real, mas erros podem ocorrer. A confirmação final garante o seu horário.</p>
 
             <h2>4. Ferramenta de Geração de Conteúdo com IA</h2>
-            <p>A ferramenta de criação de blog posts utiliza a API do Google Gemini para gerar texto e imagens. Você é responsável pelo conteúdo que solicita e publica. O conteúdo gerado é fornecido "como está", sem garantias de precisão ou originalidade. Recomendamos que você revise e edite todo o conteúdo antes da publicação.</p>
+            <p>A ferramenta de criação de blog posts utiliza a API do Google Gemini para gerar texto e imagens. Você é responsável pelo conteúdo que solicita e publica. O conteúdo gerado é fornecido &quot;como está&quot;, sem garantias de precisão ou originalidade. Recomendamos que você revise e edite todo o conteúdo antes da publicação.</p>
             <p>Ao gerar conteúdo, você concede ao site Podologia Sandra Barreto o direito de exibir esse conteúdo publicamente na seção de blog do site.</p>
             
             <h2>5. Propriedade Intelectual</h2>

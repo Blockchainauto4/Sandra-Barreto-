@@ -31,7 +31,7 @@ const Testimonials: React.FC = () => {
             nextSlide();
         }, 6000); // 6 seconds per slide
         return () => clearInterval(interval);
-    }, [currentIndex]); // Depend on currentIndex to reset timer on manual interaction roughly
+    }, [currentIndex, nextSlide]); // Depend on currentIndex to reset timer on manual interaction roughly
 
     const goToSlide = (index: number) => {
         setCurrentIndex(index);
