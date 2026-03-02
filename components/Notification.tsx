@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 
 interface NotificationProps {
     message: string | null;
@@ -8,6 +8,14 @@ interface NotificationProps {
 const Notification: React.FC<NotificationProps> = ({ message, onClose }) => {
     const [isVisible, setIsVisible] = useState(false);
 
+    const handleClose = useCallback(() => {
+        setIsVisible(false);
+        // Allow time for fade-out animation before clearing the message
+        setTimeout(() => {
+            onClose();
+        }, 300);
+    }, [onClose]);
+
     useEffect(() => {
         if (message) {
             setIsVisible(true);
@@ -16,15 +24,7 @@ const Notification: React.FC<NotificationProps> = ({ message, onClose }) => {
             }, 5000); // Auto-dismiss after 5 seconds
             return () => clearTimeout(timer);
         }
-    }, [message, handleClose, onClose]);
-
-    const handleClose = useCallback(() => {
-        setIsVisible(false);
-        // Allow time for fade-out animation before clearing the message
-        setTimeout(() => {
-            onClose();
-        }, 300);
-    }, [onClose]);
+    }, [message, handleClose]);
 
     if (!message) return null;
 

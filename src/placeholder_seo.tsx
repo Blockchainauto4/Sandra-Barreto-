@@ -1,16 +1,12 @@
 
 import React from 'react';
-import type { LocationItem } from './types';
+import type { LocationConfig } from './seoConfigs';
 
-export type LocationConfig = {
-    heroTitle: React.ReactNode;
-    heroSubtitle: React.ReactNode;
-    seoTitle: string;
-    seoDesc: string;
-    locationsList?: LocationItem[];
-};
-
-export const NATIONAL_SEO_CONFIGS: Record<string, LocationConfig> = {
+/**
+ * Placeholder for pages that don't belong to the core optimized content.
+ * These are kept here to avoid cluttering the main SEO structure.
+ */
+export const PLACEHOLDER_SEO_CONFIGS: Record<string, LocationConfig> = {
     'parana': {
         heroTitle: <>Guia de Podologia no <span className="text-brand-secondary">Paraná</span></>,
         heroSubtitle: <p>Informações e dicas sobre saúde dos pés, tratamentos para <strong>unha encravada e micoses</strong> para moradores de <strong>Curitiba, Londrina</strong> e todo o estado do Paraná.</p>,

@@ -25,13 +25,17 @@ const Testimonials: React.FC = () => {
     const [reviews] = useState<Review[]>(REVIEWS_DATA);
     const [currentIndex, setCurrentIndex] = useState(0);
 
+    const nextSlide = useCallback(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
+    }, [reviews.length]);
+
     // Auto-slide effect
     useEffect(() => {
         const interval = setInterval(() => {
             nextSlide();
         }, 6000); // 6 seconds per slide
         return () => clearInterval(interval);
-    }, [currentIndex, nextSlide]); // Depend on currentIndex to reset timer on manual interaction roughly
+    }, [nextSlide]); // Depend on nextSlide to reset timer on manual interaction roughly
 
     const goToSlide = (index: number) => {
         setCurrentIndex(index);
@@ -40,10 +44,6 @@ const Testimonials: React.FC = () => {
     const prevSlide = () => {
         setCurrentIndex((prevIndex) => (prevIndex === 0 ? reviews.length - 1 : prevIndex - 1));
     };
-
-    const nextSlide = useCallback(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
-    }, [reviews.length]);
 
     return (
         <section id="depoimentos" className="py-24 bg-brand-light relative overflow-hidden">

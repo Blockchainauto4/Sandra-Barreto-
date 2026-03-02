@@ -144,9 +144,9 @@ const CreatePost: React.FC = () => {
                  // We don't mark this as a fatal error to allow the flow to continue. 
             }
 
-        } catch (error: unknown) {
+        } catch (error: any) {
             console.error("Social Media Error:", error);
-            alert(`Erro ao publicar nas redes sociais: ${error.message}`);
+            alert(`Erro ao publicar nas redes sociais: ${error.message || 'Erro desconhecido'}`);
             setIsPostingSocial(false);
             return false;
         }
