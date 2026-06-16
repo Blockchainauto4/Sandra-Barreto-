@@ -4,7 +4,7 @@ import Hero from './Hero';
 import About from './About';
 import Services from './Services';
 import Pricing from './Pricing';
-import Testimonials from './testimonials';
+import Testimonials from './Testimonials';
 import Scheduling from './Scheduling';
 import FAQ from './FAQ';
 import Locations from './Locations';
