@@ -208,7 +208,7 @@ const App: React.FC = () => {
                       onAddPost={handleAddPost}
                       onAddAppointment={handleAddAppointment}
                       heroTitle={<>Podóloga Perto de Você: <br className="hidden md:block" /><span className="text-brand-primary">Atendimento Especializado</span> na Zona Sul</>}
-                      heroSubtitle={<p>Sua busca por <strong>"podóloga perto de mim"</strong> termina aqui. Atendimento clínico no <strong>Campo Belo</strong> com acesso rápido para <strong>Moema e Brooklin</strong>. Alívio para unha encravada, micoses e mais. Agende sua consulta.</p>}
+                      heroSubtitle={<p>Sua busca por <strong>"podóloga perto de mim"</strong> ou <strong>"podologo próximo a mim"</strong> termina aqui. Atendimento clínico de referência no <strong>Campo Belo</strong> com acesso rápido de 2 a 10 min para <strong>Moema, Brooklin, Vila Olímpia, Itaim Bibi, Vila Nova Conceição, Planalto Paulista e Indianópolis</strong>. Tratamento definitivo para unha encravada, micose de unha e mais. Agende agora sua consulta.</p>}
                     />;
     }
   }

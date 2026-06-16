@@ -74,4 +74,22 @@ export const LOCATION_CONFIGS: Record<string, LocationConfig> = {
         seoTitle: "Reflexologia Podal no Brooklin • Sandra Barreto • Bem-estar e Saúde",
         seoDesc: "Reduza o estresse e melhore sua saúde com reflexologia podal no Brooklin. Massagem terapêutica especializada para alívio de tensões. Agende sua sessão!"
     },
+    'podologia-perto-de-mim-aberto-agora': {
+        heroTitle: <>Podologia Perto de Mim: <span className="text-brand-secondary">Aberto Agora / Plantão Único</span></>,
+        heroSubtitle: <p>Buscando atendimento imediato? Conte com a Dra. Sandra Barreto no <strong>Campo Belo</strong> para alívio rápido de dores, unha com pus, encravada ou inflamada. <strong>Horários flexíveis e encaixes rápidos de urgência hoje mesmo!</strong></p>,
+        seoTitle: "Podologia Perto de Mim Aberto Agora • Sandra Barreto • Urgências Zona Sul SP",
+        seoDesc: "Buscando podólogo aberto agora perto de você? Agende sua consulta com encaixe rápido de urgência com a Dra. Sandra Barreto no Campo Belo. Alívio de dor garantido!"
+    },
+    'podologia-perto-de-mim-bem-avaliada': {
+        heroTitle: <>Clínica de Podologia <span className="text-brand-secondary">Mais Bem Avaliada no Google</span></>,
+        heroSubtitle: <p>Sua saúde em mãos de quem os pacientes confiam! <strong>Nota 5.0 ⭐ no Google ratings</strong>. Atendimento humanizado, biossegurança rigorosa em autoclave e resultados garantidos no <strong>Campo Belo</strong> e Zona Sul.</p>,
+        seoTitle: "Podóloga Perto de Mim Bem Avaliada • Sandra Barreto • Nota 5.0 ⭐",
+        seoDesc: "Confira a opinião de quem já se tratou conosco. Clínica de podologia no Campo Belo classificada com avaliação máxima 5.0 ⭐ pelos pacientes do Google."
+    },
+    'micose-unha-perto-de-mim': {
+        heroTitle: <>Tratamento Eficaz de <span className="text-brand-secondary">Micose de Unha</span> Perto de Você</>,
+        heroSubtitle: <p>Recupere a saúde e beleza das suas unhas (onicomicose) com tratamento especializado, laserterapia e acompanhamento profissional no <strong>Campo Belo / Moema</strong>. Resultados rápidos e definitivos.</p>,
+        seoTitle: "Tratamento de Micose de Unha em Campo Belo • Sandra Barreto • Laserterapia",
+        seoDesc: "Acabe de vez com a micose de unha! Tratamentos modernos de alta eficácia com laserterapia na clínica da Dra. Sandra Barreto no Campo Belo. Agende sua consulta."
+    },
 };
