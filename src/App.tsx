@@ -11,7 +11,7 @@ const About = React.lazy(() => import('./components/About'));
 const Services = React.lazy(() => import('./components/Services'));
 const Pricing = React.lazy(() => import('./components/Pricing')); // Loaded lazy but important for snippets
 const Locations = React.lazy(() => import('./components/Locations')); // New component for SEO
-const Testimonials = React.lazy(() => import('./components/Testimonials'));
+const Testimonials = React.lazy(() => import('./components/testimonials'));
 const InstagramFeed = React.lazy(() => import('./components/InstagramFeed'));
 const ProfessionalRegistration = React.lazy(() => import('./components/ProfessionalRegistration'));
 const FAQ = React.lazy(() => import('./components/FAQ'));
