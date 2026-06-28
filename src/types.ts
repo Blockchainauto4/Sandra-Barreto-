@@ -30,16 +30,6 @@ export interface BlogPost {
   authorRole?: string;
 }
 
-export interface Appointment {
-  id: string;
-  service: string;
-  date: string; // YYYY-MM-DD
-  time: string; // HH:mm
-  clientName: string;
-  clientContact: string;
-  clientEmail: string;
-}
-
 export interface PricingItem {
   treatment: string;
   indication: string;

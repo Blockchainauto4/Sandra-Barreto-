@@ -2,7 +2,7 @@
 import React, { useState, useEffect, Suspense, useSyncExternalStore } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import type { BlogPost, Appointment, LocationItem } from './types';
+import type { BlogPost, LocationItem } from './types';
 import { BLOG_POSTS_DATA } from './constants';
 import { LOCATION_CONFIGS, type LocationConfig } from './seoConfigs';
 
@@ -16,17 +16,13 @@ const InstagramFeed = React.lazy(() => import('./components/InstagramFeed'));
 const ProfessionalRegistration = React.lazy(() => import('./components/ProfessionalRegistration'));
 const FAQ = React.lazy(() => import('./components/FAQ'));
 const Contact = React.lazy(() => import('./components/Contact'));
-const Scheduling = React.lazy(() => import('./components/Scheduling'));
 const Footer = React.lazy(() => import('./components/Footer'));
 const WhatsAppButton = React.lazy(() => import('./components/WhatsAppButton'));
-const CreatePost = React.lazy(() => import('./components/CreatePost'));
 const BlogSection = React.lazy(() => import('./components/BlogSection'));
 const Notification = React.lazy(() => import('./components/Notification'));
 const CookieConsentBanner = React.lazy(() => import('./components/CookieConsentBanner'));
-const SchedulingAssistant = React.lazy(() => import('./components/SchedulingAssistant'));
 
 // Lazy load Pages
-const AdminDashboard = React.lazy(() => import('./components/AdminDashboard'));
 const PrivacyPolicy = React.lazy(() => import('./components/PrivacyPolicy'));
 const TermsOfService = React.lazy(() => import('./components/TermsOfService'));
 const ManicurePage = React.lazy(() => import('./components/ManicurePage')); // New Page
@@ -45,9 +41,6 @@ const SectionLoader = () => (
 
 interface MainContentProps {
   posts: BlogPost[];
-  appointments: Appointment[];
-  onAddPost: (post: BlogPost) => void;
-  onAddAppointment: (appointment: Appointment) => void;
   heroTitle?: React.ReactNode;
   heroSubtitle?: React.ReactNode;
   locationsList?: LocationItem[];
@@ -55,9 +48,6 @@ interface MainContentProps {
 
 const MainContent: React.FC<MainContentProps> = ({ 
     posts, 
-    appointments, 
-    onAddPost, 
-    onAddAppointment, 
     heroTitle,
     heroSubtitle,
     locationsList
@@ -76,13 +66,8 @@ const MainContent: React.FC<MainContentProps> = ({
             <Testimonials />
             <InstagramFeed />
             <BlogSection posts={posts} />
-            <Scheduling 
-                appointments={appointments} 
-                onAddAppointment={onAddAppointment}
-            />
             <FAQ />
             <Contact />
-            <CreatePost onAddPost={onAddPost} />
         </Suspense>
       </>
   );
@@ -99,7 +84,6 @@ const getServerHashSnapshot = () => '';
 
 const App: React.FC = () => {
   const [posts, setPosts] = useState<BlogPost[]>(BLOG_POSTS_DATA);
-  const [appointments, setAppointments] = useState<Appointment[]>([]);
   const [notification, setNotification] = useState<string | null>(null);
   const [showCookieBanner, setShowCookieBanner] = useState(false);
   
@@ -114,7 +98,7 @@ const App: React.FC = () => {
   if (LOCATION_CONFIGS[hash]) {
       currentLocationConfig = LOCATION_CONFIGS[hash];
       currentPage = 'location';
-  } else if (hash === 'privacy-policy' || hash === 'terms-of-service' || hash === 'admin' || hash === 'manicure') {
+  } else if (hash === 'privacy-policy' || hash === 'terms-of-service' || hash === 'manicure') {
       currentPage = hash;
   }
   
@@ -134,12 +118,6 @@ const App: React.FC = () => {
     setPosts(prevPosts => [newPost, ...prevPosts]);
   };
 
-  const handleAddAppointment = (newAppointment: Appointment) => {
-    setAppointments(prev => [...prev, newAppointment]);
-    const notificationMessage = `Novo agendamento de ${newAppointment.clientName} para ${newAppointment.date} às ${newAppointment.time}.`;
-    setNotification(notificationMessage);
-  };
-
   const handleCloseNotification = () => {
     setNotification(null);
   };
@@ -157,7 +135,7 @@ const App: React.FC = () => {
             desc: currentLocationConfig.seoDesc 
         };
     }
-    if (currentPage === 'privacy-policy' || currentPage === 'terms-of-service' || currentPage === 'admin') {
+    if (currentPage === 'privacy-policy' || currentPage === 'terms-of-service') {
         return { 
             title: "Podologia Sandra Barreto | Área Legal", 
             desc: "Informações legais e administrativas. Política de Privacidade e Termos de Serviço." 
@@ -185,17 +163,12 @@ const App: React.FC = () => {
             return <PrivacyPolicy />;
         case 'terms-of-service':
             return <TermsOfService />;
-        case 'admin':
-            return <AdminDashboard />;
         case 'manicure':
-            return <ManicurePage appointments={appointments} onAddAppointment={handleAddAppointment} />;
+            return <ManicurePage />;
         case 'location':
             // Renders the main content but with injected props from the location config
             return <MainContent 
                       posts={posts} 
-                      appointments={appointments}
-                      onAddPost={handleAddPost}
-                      onAddAppointment={handleAddAppointment}
                       heroTitle={currentLocationConfig?.heroTitle}
                       heroSubtitle={currentLocationConfig?.heroSubtitle}
                       locationsList={currentLocationConfig?.locationsList}
@@ -204,9 +177,6 @@ const App: React.FC = () => {
             // Default Home Content - Updated "Perto de Mim" concept
             return <MainContent 
                       posts={posts} 
-                      appointments={appointments}
-                      onAddPost={handleAddPost}
-                      onAddAppointment={handleAddAppointment}
                       heroTitle={<>Podóloga Perto de Você: <br className="hidden md:block" /><span className="text-brand-primary">Atendimento Especializado</span> na Zona Sul</>}
                       heroSubtitle={<p>Sua busca por <strong>"podóloga perto de mim"</strong> ou <strong>"podologo próximo a mim"</strong> termina aqui. Atendimento clínico de referência no <strong>Campo Belo</strong> com acesso rápido de 2 a 10 min para <strong>Moema, Brooklin, Vila Olímpia, Itaim Bibi, Vila Nova Conceição, Planalto Paulista e Indianópolis</strong>. Tratamento definitivo para unha encravada, micose de unha e mais. Agende agora sua consulta.</p>}
                     />;
@@ -214,7 +184,7 @@ const App: React.FC = () => {
   }
 
   // Determine if we should show the standard public layout (Header, Footer, Floating Buttons)
-  const isFullPageLayout = currentPage === 'admin';
+  const isFullPageLayout = false;
 
   return (
     <div className="bg-brand-light font-sans text-brand-dark">
@@ -237,7 +207,6 @@ const App: React.FC = () => {
 
       {!isFullPageLayout && (
           <Suspense fallback={null}>
-            <SchedulingAssistant appointments={appointments} onAddAppointment={handleAddAppointment} />
             <WhatsAppButton />
             <Notification message={notification} onClose={handleCloseNotification} />
             {showCookieBanner && <CookieConsentBanner onAccept={handleAcceptCookies} />}

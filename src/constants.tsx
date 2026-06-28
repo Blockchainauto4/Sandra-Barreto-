@@ -215,7 +215,7 @@ export const MANICURE_FAQ_DATA: FAQItem[] = [
     },
     {
         question: "Preciso agendar horário para manicure?",
-        answer: "Sim, trabalhamos com agendamento prévio para garantir um atendimento pontual e exclusivo, sem espera. Você pode agendar facilmente pelo WhatsApp ou aqui pelo site."
+        answer: "Sim, trabalhamos com agendamento prévio para garantir um atendimento pontual e exclusivo, sem espera. Você pode agendar facilmente pelo WhatsApp."
     }
 ];
 

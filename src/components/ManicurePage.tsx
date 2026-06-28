@@ -5,18 +5,11 @@ import About from './About';
 import Services from './Services';
 import Pricing from './Pricing';
 import Testimonials from './Testimonials';
-import Scheduling from './Scheduling';
 import FAQ from './FAQ';
 import Locations from './Locations';
-import type { Appointment } from '../types';
 import { MANICURE_SERVICES_DATA, MANICURE_PRICING_DATA, MANICURE_FAQ_DATA } from '../constants';
 
-interface ManicurePageProps {
-    appointments: Appointment[];
-    onAddAppointment: (appointment: Appointment) => void;
-}
-
-const ManicurePage: React.FC<ManicurePageProps> = ({ appointments, onAddAppointment }) => {
+const ManicurePage: React.FC = () => {
     // Structured Data for Local SEO (JSON-LD)
     const structuredData = {
         "@context": "https://schema.org",
@@ -129,11 +122,6 @@ const ManicurePage: React.FC<ManicurePageProps> = ({ appointments, onAddAppointm
             <Locations />
             
             <Testimonials />
-            
-            <Scheduling 
-                appointments={appointments} 
-                onAddAppointment={onAddAppointment} 
-            />
             
             <FAQ 
                 items={MANICURE_FAQ_DATA}
