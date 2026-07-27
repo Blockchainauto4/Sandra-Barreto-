@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
                             CEP 04617-005
                         </address>
                         <p className="text-xs text-gray-500 opacity-70 mb-4">Clínica de Referência em SP & Portal Nacional de Podologia</p>
-                        <a href="https://wa.me/5511952851860" target="_blank" rel="noopener noreferrer" className="text-brand-primary hover:text-white font-bold text-sm transition-colors">
+                        <a href="https://wa.me/5511952851860?text=Ola%20vim%20atraves%20do%20site%20e%20gostaria%20De%20agendar" target="_blank" rel="noopener noreferrer" className="text-brand-primary hover:text-white font-bold text-sm transition-colors">
                             (11) 95285-1860
                         </a>
                     </div>
