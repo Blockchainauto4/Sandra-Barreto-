@@ -42,21 +42,21 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
                         subtitle
                     ) : (
                         <p>
-                             Clínica especializada localizada na Zona Sul de SP. Atendimento de excelência para moradores de <strong>Campo Belo, Moema, Brooklin e Vila Olímpia</strong>. Agende sua avaliação com a Dra. Sandra Barreto.
+                             Clínica especializada localizada na Zona Sul de SP. Atendimento de excelência para moradores de <strong>Campo Belo, Moema, Brooklin e Vila Olímpia</strong>. Entre em contato com a Dra. Sandra Barreto.
                         </p>
                     )}
                 </div>
                 <div className="flex flex-col items-center">
                     <a
-                        href="https://wa.me/5511952851860?text=Ola%20vim%20atraves%20do%20site%20e%20gostaria%20De%20agendar"
+                        href="https://wa.me/5511952851860?text=Ola%20vim%20atraves%20do%20site%20e%20gostaria%20De%20entrar%20em%20contato"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-brand-secondary font-sans rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary hover:bg-brand-dark shadow-xl transform hover:-translate-y-1 hover:scale-105"
                     >
-                        Agendar via WhatsApp
+                        Falar no WhatsApp
                         <svg className="w-5 h-5 ml-2 -mr-1 transition-transform group-hover:translate-x-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                     </a>
-                    <p className="mt-4 text-sm text-gray-600">Clique aqui para agendar via WhatsApp!</p>
+                    <p className="mt-4 text-sm text-gray-600">Clique para falar diretamente via WhatsApp!</p>
                 </div>
             </div>
         </section>

@@ -195,6 +195,10 @@ export const FAQ_DATA: FAQItem[] = [
         answer: "A pedicure realiza um trabalho estético de embelezamento das unhas e pés. O podólogo é um profissional da área da saúde, com formação técnica para tratar afecções e patologias dos pés, como unhas encravadas, calos, micoses, e realizar cuidados preventivos em pés diabéticos."
     },
     {
+        question: "Quais os horários de atendimento e como entrar em contato?",
+        answer: "Atendemos de Segunda a Sexta-feira das 9h às 20h e aos Sábados das 9h às 13h. Você pode falar diretamente conosco através do nosso WhatsApp (11) 95285-1860 ou ligar para tirar dúvidas e agendar sua visita."
+    },
+    {
         question: "Atendem por convênio médico?",
         answer: "No momento, não atendemos por convênio médico, mas emitimos recibo para que você possa solicitar o reembolso, caso seu plano ofereça essa opção."
     }

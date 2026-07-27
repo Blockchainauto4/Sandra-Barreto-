@@ -25,8 +25,8 @@ const Header: React.FC = () => {
                             {link.label}
                         </a>
                     ))}
-                    <a href="https://wa.me/5511952851860?text=Ola%20vim%20atraves%20do%20site%20e%20gostaria%20De%20agendar" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center bg-brand-secondary text-white px-5 py-2.5 rounded-full hover:bg-brand-primary transition-all duration-300 hover:scale-105 shadow-md font-bold">
-                        Agendar via WhatsApp
+                    <a href="https://wa.me/5511952851860?text=Ola%20vim%20atraves%20do%20site%20e%20gostaria%20De%20entrar%20em%20contato" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center bg-brand-secondary text-white px-5 py-2.5 rounded-full hover:bg-brand-primary transition-all duration-300 hover:scale-105 shadow-md font-bold">
+                        Contato via WhatsApp
                         <svg className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                     </a>
                 </nav>
@@ -54,8 +54,8 @@ const Header: React.FC = () => {
                                 {link.label}
                             </a>
                         ))}
-                        <a href="https://wa.me/5511952851860?text=Ola%20vim%20atraves%20do%20site%20e%20gostaria%20De%20agendar" target="_blank" rel="noopener noreferrer" className="bg-brand-secondary text-white px-8 py-3 rounded-full hover:bg-brand-primary transition-transform duration-300 hover:scale-105 font-bold shadow-lg mt-2" onClick={() => setIsOpen(false)}>
-                            Agendar via WhatsApp
+                        <a href="https://wa.me/5511952851860?text=Ola%20vim%20atraves%20do%20site%20e%20gostaria%20De%20entrar%20em%20contato" target="_blank" rel="noopener noreferrer" className="bg-brand-secondary text-white px-8 py-3 rounded-full hover:bg-brand-primary transition-transform duration-300 hover:scale-105 font-bold shadow-lg mt-2" onClick={() => setIsOpen(false)}>
+                            Contato via WhatsApp
                         </a>
                     </nav>
                 </div>
