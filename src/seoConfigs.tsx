@@ -92,4 +92,10 @@ export const LOCATION_CONFIGS: Record<string, LocationConfig> = {
         seoTitle: "Tratamento de Micose de Unha em Campo Belo • Sandra Barreto • Laserterapia",
         seoDesc: "Acabe de vez com a micose de unha! Tratamentos modernos de alta eficácia com laserterapia na clínica da Dra. Sandra Barreto no Campo Belo. Agende sua consulta."
     },
+    'verruga-plantar-perto-de-mim': {
+        heroTitle: <>Tratamento de <span className="text-brand-secondary">Verruga Plantar (HPV / Olho de Peixe)</span></>,
+        heroSubtitle: <p>Eliminação segura de lesões virais plantares com a <strong>Dra. Sandra Barreto, profissional local no Campo Belo</strong>. Tratamento de viroses podológicas e remoção sem complicações.</p>,
+        seoTitle: "Tratamento de Verruga Plantar em Campo Belo • Dra. Sandra Barreto • Virologia Podológica",
+        seoDesc: "Livre-se da verruga plantar (olho de peixe / HPV). Atendimento especializado no Campo Belo, Zona Sul de SP. Dra. Sandra Barreto, profissional local. Agende!"
+    },
 };

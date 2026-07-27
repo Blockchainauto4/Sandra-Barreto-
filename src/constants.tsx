@@ -79,8 +79,13 @@ export const SERVICES_DATA: Service[] = [
     },
     {
         icon: <NailIcon />,
-        title: "Tratamento de Micoses",
-        description: "Soluções eficazes com laserterapia e medicamentos para fungos nas unhas (Onicomicose), restaurando a saúde e estética."
+        title: "Tratamento de Micoses e Onicomicose",
+        description: "Soluções eficazes com laserterapia e medicamentos para fungos nas unhas (Onicomicose) e frieiras, restaurando a saúde e estética."
+    },
+    {
+        icon: <FootIcon />,
+        title: "Verruga Plantar (Olho de Peixe / HPV)",
+        description: "Tratamento seguro e preciso para eliminação de verrugas plantares causadas pelo papilomavírus (HPV), cessando a proliferação viral e a dor ao pisar."
     },
     {
         icon: <NailBraceIcon />,
@@ -96,11 +101,6 @@ export const SERVICES_DATA: Service[] = [
         icon: <ReflexologyIcon />,
         title: "Reflexologia Podal",
         description: "Terapia de massagem que aplica pressão em pontos específicos dos pés para promover relaxamento, alívio de tensões e bem-estar geral."
-    },
-     {
-        icon: <FootIcon />,
-        title: "Podologia Clínica Geral",
-        description: "Tratamento completo para calos, calosidades, fissuras e ressecamento, garantindo a saúde e o conforto total dos seus pés."
     },
 ];
 

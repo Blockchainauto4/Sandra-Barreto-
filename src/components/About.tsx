@@ -48,7 +48,7 @@ const About: React.FC<AboutProps> = ({
                             {description || (
                                 <>
                                     <p className="mb-4">
-                                        Com mais de <strong>15 anos de experiência clínica</strong>, sou especialista graduada em Podologia, oferecendo tratamentos avançados para <strong>Pés Diabéticos</strong>, <strong>Unhas Encravadas</strong> e <strong>Podologia Esportiva</strong> aqui no bairro do Campo Belo. Se você pesquisou hoje por "podóloga perto de mim" ou procurou "podologo próximo a mim" na Zona Sul de SP, encontrou um espaço dedicado ao alívio imediato de dores corporais e plantares.
+                                        Como <strong>profissional local estabelecida no bairro do Campo Belo</strong> com mais de 15 anos de experiência clínica, a <strong>Dra. Sandra Barreto</strong> é especialista graduada em Podologia, oferecendo tratamentos avançados para <strong>Viroses Podológicas (Verruga Plantar / HPV / Olho de Peixe)</strong>, <strong>Onicomicose e Frieiras</strong>, <strong>Pés Diabéticos</strong> e <strong>Unhas Encravadas</strong>.
                                     </p>
                                     <p className="mb-4">
                                         Meu consultório está estrategicamente localizado para atender pacientes de <strong>Moema</strong>, <strong>Brooklin</strong>, <strong>Itaim Bibi</strong> e <strong>Vila Olímpia</strong>. Se você precisa de tratamento urgente (para unha inflamada, micose ou unhas de gel) e quer encontrar uma especialista ou "podólogo perto de mim aberto agora", oferecemos facilidade de agendamento via WhatsApp e atendimento estendido de suporte.
