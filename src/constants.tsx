@@ -226,43 +226,53 @@ export const MANICURE_FAQ_DATA: FAQItem[] = [
 // Blog Posts Data
 export const BLOG_POSTS_DATA: BlogPost[] = [
     {
+        id: '5',
+        title: 'Qual a diferença entre podologia e pedicure?',
+        content: 'Muitas pessoas têm dúvidas sobre a diferença entre o trabalho da pedicure e do podólogo. A pedicure realiza o embelezamento dos pés, cuidando da estética, como cutilagem e esmaltação. Já o podólogo é um profissional da saúde, capacitado e focado no tratamento de afecções e patologias. O podólogo trata unhas encravadas (onicocriptose), infecções fúngicas (onicomicose), calos, verrugas plantares e cuida de pés diabéticos, utilizando materiais rigorosamente esterilizados em autoclave e conhecimentos anatômicos.',
+        imageUrl: 'https://images.unsplash.com/photo-1519014816548-bf5fe059e98b?auto=format&fit=crop&q=80',
+        date: '10 de Julho, 2026',
+        excerpt: 'Descubra por que a podologia vai muito além da estética e quando você deve procurar um profissional de saúde em vez de um salão de beleza.',
+        author: 'Dra. Sandra Barreto',
+        authorRole: 'Podóloga Clínica'
+    },
+    {
         id: '4',
-        title: 'Quanto custa podologia em Campo Belo 2026: Guia de Preços',
-        content: 'Se você está procurando saber "quanto custa podologia em Campo Belo em 2026", este guia é para você. Os valores de uma consulta de podologia na Zona Sul de São Paulo podem variar dependendo da complexidade do caso e da experiência do profissional. Em média, um atendimento de podologia clínica tradicional (que inclui corte técnico, desbaste de calos e hidratação) varia entre R$ 120,00 e R$ 160,00. Procedimentos específicos, como o tratamento de unha encravada com curativo, podem variar de R$ 150,00 a R$ 250,00. Na clínica da Dra. Sandra Barreto, priorizamos a transparência e a biossegurança, utilizando materiais 100% esterilizados em autoclave. Investir na saúde dos seus pés é prevenir dores futuras e garantir qualidade de vida.',
-        imageUrl: 'https://picsum.photos/seed/pricing/800/600',
-        date: '28 de Fevereiro, 2026',
-        excerpt: 'Descubra os valores médios de tratamentos podológicos no Campo Belo para 2026. Saiba quanto custa cuidar da saúde dos seus pés com especialistas.',
-        author: 'Sandra Barreto',
-        authorRole: 'Podóloga Especialista'
+        title: 'Por que não devo tentar desencravar a unha em casa?',
+        content: 'Um dos maiores erros é tentar tratar uma unha encravada (onicocriptose) em casa ou com instrumentos não esterilizados. Isso pode piorar a situação, causar infecções graves e muita dor. O podólogo utiliza instrumentos cirúrgicos específicos e técnicas indolores para a remoção da espícula (canto de unha), realizando curativos e, se necessário, aplicando órteses para reeducar o crescimento da unha sem sofrimento.',
+        imageUrl: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71c9?auto=format&fit=crop&q=80',
+        date: '28 de Junho, 2026',
+        excerpt: 'Entenda os riscos de tentar resolver unhas encravadas por conta própria e como a podologia clínica resolve o problema sem dor.',
+        author: 'Dra. Sandra Barreto',
+        authorRole: 'Podóloga Clínica'
     },
     {
         id: '3',
-        title: 'Qual clínica de podólogo mais perto de mim na Zona Sul?',
-        content: 'Muitos pacientes chegam ao nosso consultório após pesquisarem no Google por "podólogo perto de mim". A conveniência é fundamental, especialmente quando se trata de dores agudas como unha encravada. Nossa clínica está estrategicamente situada no Campo Belo, oferecendo acesso rápido para moradores de Moema (via Ibirapuera), Brooklin (via Roberto Marinho) e Vila Olímpia. Além da proximidade, oferecemos estacionamento e horários flexíveis. Não escolha apenas pelo mais próximo, escolha pela segurança e higiene que a Dra. Sandra Barreto oferece.',
-        imageUrl: 'https://picsum.photos/seed/location/800/600',
-        date: '10 de Agosto, 2024',
-        excerpt: 'Descubra como encontrar o podólogo ideal próximo à sua localização no Campo Belo, Moema e região. Dicas para escolher o melhor profissional perto de você.',
-        author: 'Sandra Barreto',
-        authorRole: 'Podóloga Especialista'
-    },
-    {
-        id: '1',
-        title: 'Pés Saudáveis no Verão: Dicas da sua Podóloga no Campo Belo',
-        content: 'O verão é uma estação que exige cuidados redobrados com os pés. O uso constante de calçados abertos, o contato com areia e a umidade podem causar problemas. Por isso, separamos 5 dicas essenciais para você curtir a estação sem preocupações: hidrate diariamente, use protetor solar, seque bem os pés, escolha calçados confortáveis e, claro, visite seu podólogo regularmente. Se você está na Zona Sul de SP, especialmente no Campo Belo, Moema ou Brooklin, agende uma avaliação e garanta que seus pés estejam prontos para aproveitar o melhor do verão!',
-        imageUrl: 'https://picsum.photos/seed/summerfeet/800/600',
-        date: '15 de Julho, 2024',
-        excerpt: 'O verão chegou na Zona Sul de SP! Se você mora no Campo Belo, Moema ou Brooklin, descubra 5 dicas essenciais para manter a saúde dos seus pés...',
-        author: 'Sandra Barreto',
-        authorRole: 'Podóloga Especialista'
+        title: 'O que é verruga plantar (olho de peixe) e como tratar?',
+        content: 'A verruga plantar, popularmente conhecida como "olho de peixe", é uma lesão causada pelo papilomavírus humano (HPV). Ao pisar, a verruga é pressionada para dentro da pele, causando muita dor, semelhante a pisar em um prego. O tratamento requer a intervenção de um podólogo, que utiliza métodos como a cauterização e laserterapia para eliminar a virose e estimular a renovação do tecido, garantindo a cicatrização completa.',
+        imageUrl: 'https://images.unsplash.com/photo-1585435421671-0c16764628ce?auto=format&fit=crop&q=80',
+        date: '15 de Junho, 2026',
+        excerpt: 'Sente dor ao pisar? Pode ser uma verruga plantar. Saiba mais sobre essa virose e como eliminá-la de forma segura no consultório.',
+        author: 'Dra. Sandra Barreto',
+        authorRole: 'Podóloga Clínica'
     },
     {
         id: '2',
-        title: 'Podologia Esportiva no Brooklin e Região: Como Evitar Lesões',
-        content: 'Para atletas, os pés são a base de tudo. Impactos constantes, atrito e transpiração excessiva podem levar a lesões, bolhas, calos e problemas nas unhas. A podologia preventiva atua diretamente na minimização desses riscos. Se você pratica esportes e está na região do Brooklin, Campo Belo ou Itaim Bibi, investir na saúde dos seus pés é investir na sua performance. Entre em contato e saiba como podemos ajudar você a alcançar seus objetivos com segurança e conforto.',
-        imageUrl: 'https://picsum.photos/seed/athletefoot/800/600',
-        date: '28 de Junho, 2024',
-        excerpt: 'Para atletas do Brooklin, Campo Belo e Itaim Bibi, os pés são a base de tudo. Entenda como a podologia preventiva pode otimizar sua performance...',
-        author: 'Sandra Barreto',
-        authorRole: 'Podóloga Especialista'
+        title: 'Pé Diabético: Quais são os cuidados essenciais?',
+        content: 'Pacientes com diabetes correm o risco de desenvolver neuropatia (perda de sensibilidade) e problemas de circulação, tornando os pés altamente vulneráveis. Pequenos machucados podem virar úlceras graves. Por isso, as unhas devem ser cortadas por um podólogo especializado. Nunca se deve andar descalço, os pés devem ser inspecionados diariamente e hidratados (evitando o meio dos dedos). O acompanhamento preventivo com a podóloga salva membros de amputações.',
+        imageUrl: 'https://images.unsplash.com/photo-1505576399279-565b52d4ac71?auto=format&fit=crop&q=80',
+        date: '05 de Maio, 2026',
+        excerpt: 'A podologia preventiva é fundamental para diabéticos. Conheça as rotinas essenciais para proteger seus pés contra complicações.',
+        author: 'Dra. Sandra Barreto',
+        authorRole: 'Podóloga Clínica'
+    },
+    {
+        id: '1',
+        title: 'Como funciona o tratamento a laser para micose de unha?',
+        content: 'A onicomicose (micose de unha) é teimosa e os tratamentos caseiros não funcionam. Na podologia clínica, associamos a limpeza da unha (desbaste para retirar a parte fungada) com a laserterapia. O laser ajuda a combater o fungo de forma rápida e segura e acelera o crescimento saudável da unha nova. É um tratamento altamente eficaz que traz resultados muito superiores ao uso isolado de esmaltes.',
+        imageUrl: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80',
+        date: '20 de Abril, 2026',
+        excerpt: 'Descubra a tecnologia por trás do tratamento de micoses de unha com laserterapia e recupere a saúde e beleza dos seus pés.',
+        author: 'Dra. Sandra Barreto',
+        authorRole: 'Podóloga Clínica'
     }
 ];
