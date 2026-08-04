@@ -13,54 +13,54 @@ export type LocationConfig = {
 export const LOCATION_CONFIGS: Record<string, LocationConfig> = {
     // HIGH-INTENT Landing Page
     'podologa-perto-de-mim': {
-        heroTitle: <>Encontrou sua <span className="text-brand-secondary">Podóloga Perto de Mim</span></>,
-        heroSubtitle: <p>Atendimento especializado no coração da Zona Sul, no <strong>Campo Belo</strong>. Acesso rápido para <strong>Moema, Brooklin e Itaim</strong>. Agende e alivie suas dores hoje mesmo.</p>,
-        seoTitle: "Podóloga Perto de Mim em Campo Belo • Sandra Barreto • Atendimento Já",
-        seoDesc: "Procurando podóloga perto de você? Dra. Sandra Barreto atende no Campo Belo e região com foco em alívio imediato de dores e unhas encravadas. Agende!"
+        heroTitle: <>Sua <span className="text-brand-secondary">Podóloga Profissional Local</span> Perto de Mim</>,
+        heroSubtitle: <p>Atendimento clínico no coração da Zona Sul, no <strong>Campo Belo</strong>. Acesso rápido para <strong>Moema, Brooklin e Itaim</strong>. Alívio de dores, tratamento de viroses (verruga plantar) e onicomicose.</p>,
+        seoTitle: "Podóloga Perto de Mim em Campo Belo • Dra. Sandra Barreto • Profissional Local",
+        seoDesc: "Procurando podóloga perto de você? Dra. Sandra Barreto, profissional local no Campo Belo, atende com foco em alívio imediato de dores e unhas encravadas."
     },
     // São Paulo Neighborhoods
     'moema': {
-        heroTitle: <>Manicure e Podologia em <span className="text-brand-secondary">Moema</span></>,
-        heroSubtitle: <p>Atendimento de referência para <strong>Unhas de Gel e Podologia</strong> em Moema e região do <strong>Shopping Ibirapuera</strong>. Biossegurança e conforto.</p>,
-        seoTitle: "Podóloga em Moema • Sandra Barreto • Unha Encravada e Tratamentos",
-        seoDesc: "Atendimento especializado em podologia e manicure para moradores de Moema. Tratamento de micose, calos e unhas de gel com biossegurança. Agende sua visita!"
+        heroTitle: <>Podologia Clínica em <span className="text-brand-secondary">Moema</span></>,
+        heroSubtitle: <p>Atendimento de referência como <strong>profissional local</strong> perto de Moema e região do <strong>Shopping Ibirapuera</strong>. Especialista em virologia podológica e tratamentos clínicos avançados.</p>,
+        seoTitle: "Podologia em Moema • Dra. Sandra Barreto • Clínica Especializada Local",
+        seoDesc: "Atendimento especializado em podologia clínica perto de Moema. Tratamento de verruga plantar (HPV), micose e unha encravada com biossegurança. Agende!"
     },
     'campo-limpo': {
         heroTitle: <>Podologia para o <span className="text-brand-secondary">Campo Limpo</span> e Região</>,
-        heroSubtitle: <p>Sua saúde começa pelos pés! Atendimento de qualidade acessível para moradores do <strong>Campo Limpo, Vila das Belezas, Jardim Sul e Horto do Ypê</strong>. Livre-se da dor da unha encravada hoje mesmo.</p>,
-        seoTitle: "Podóloga no Campo Limpo • Sandra Barreto • Saúde para seus Pés",
-        seoDesc: "Podologia clínica atendendo a região do Campo Limpo e Jardim Sul. Especialista em tratamento de unhas e calosidades. Atendimento domiciliar disponível!"
+        heroSubtitle: <p>Sua saúde começa pelos pés! Atendimento de qualidade acessível e seguro. Livre-se da dor da unha encravada, trate micoses e lesões virais com uma profissional especializada.</p>,
+        seoTitle: "Podóloga perto do Campo Limpo • Dra. Sandra Barreto • Especialista",
+        seoDesc: "Podologia clínica perto da região do Campo Limpo. Profissional local especialista em tratamento de virologia, unhas e calosidades."
     },
     'itaim': {
-        heroTitle: <>Podologia e Unhas no <span className="text-brand-secondary">Itaim Bibi</span></>,
-        heroSubtitle: <p>Excelência em cuidados com os pés e mãos para quem vive ou trabalha no <strong>Itaim Bibi</strong> e arredores. Biossegurança total e atendimento pontual.</p>,
-        seoTitle: "Podóloga no Itaim Bibi • Sandra Barreto • Atendimento Especializado",
-        seoDesc: "Cuidados profissionais para seus pés no Itaim Bibi. Especialista em podologia esportiva e tratamentos clínicos. Agende seu horário no consultório ou domicílio."
+        heroTitle: <>Podologia Clínica no <span className="text-brand-secondary">Itaim Bibi</span></>,
+        heroSubtitle: <p>Excelência em cuidados clínicos com os pés para quem vive ou trabalha no <strong>Itaim Bibi</strong> e arredores. Tratamento definitivo para micoses e verrugas plantares.</p>,
+        seoTitle: "Podóloga no Itaim Bibi • Dra. Sandra Barreto • Profissional Local",
+        seoDesc: "Cuidados profissionais e clínicos para seus pés no Itaim Bibi. Especialista em podologia para tratamentos de alta performance e virologia."
     },
     'brooklin': {
-        heroTitle: <>Sua Manicure e Podóloga no <span className="text-brand-secondary">Brooklin</span></>,
-        heroSubtitle: <p>Conforto e beleza para mãos e pés no coração do <strong>Brooklin</strong> e região da <strong>Berrini</strong>. Tratamentos estéticos e clínicos com especialista qualificada.</p>,
-        seoTitle: "Podóloga no Brooklin • Sandra Barreto • Unhas de Gel e Podologia",
-        seoDesc: "Tratamentos completos de podologia e estética no Brooklin. Unha encravada, calos e unhas de gel com especialista. Agende agora seu atendimento!"
+        heroTitle: <>Sua Podóloga Clínica no <span className="text-brand-secondary">Brooklin</span></>,
+        heroSubtitle: <p>Saúde e conforto para seus pés no coração do <strong>Brooklin</strong> e região da <strong>Berrini</strong>. Tratamentos de onicomicose e viroses com especialista qualificada.</p>,
+        seoTitle: "Podóloga no Brooklin • Dra. Sandra Barreto • Podologia e Virologia",
+        seoDesc: "Tratamentos completos de podologia clínica no Brooklin. Verruga plantar, micose, unha encravada e calos com profissional local. Agende agora!"
     },
     'zona-sul': {
-        heroTitle: <>Manicure e Podologia na <span className="text-brand-secondary">Zona Sul de SP</span></>,
-        heroSubtitle: <p>Clínica bem localizada para quem busca <strong>"Manicure perto de mim"</strong>. Fácil acesso via Av. Roberto Marinho. Atendimento para <strong>Campo Belo, Moema e Região</strong>.</p>,
-        seoTitle: "Podóloga na Zona Sul de SP • Sandra Barreto • Campo Belo e Região",
-        seoDesc: "A melhor opção em podologia na Zona Sul. Atendimento no Campo Belo, Moema e Brooklin. Especialista em saúde dos pés e unhas. Agende sua consulta!"
+        heroTitle: <>Podologia Clínica na <span className="text-brand-secondary">Zona Sul de SP</span></>,
+        heroSubtitle: <p>Clínica de referência como <strong>profissional local</strong>. Fácil acesso via Av. Roberto Marinho. Atendimento especializado para <strong>Campo Belo, Moema e Região</strong>.</p>,
+        seoTitle: "Podóloga na Zona Sul SP • Dra. Sandra Barreto • Profissional Local",
+        seoDesc: "A melhor opção em podologia na Zona Sul. Atendimento no Campo Belo, Moema e Brooklin. Especialista em virologia e saúde clínica dos pés."
     },
     'perto-de-mim': {
-        heroTitle: <>Podóloga <span className="text-brand-secondary">Perto de Você</span></>,
-        heroSubtitle: <p>Localização estratégica no <strong>Campo Belo</strong> with fácil acesso para <strong>Moema, Brooklin e Aeroporto</strong>. A clínica mais completa da região.</p>,
-        seoTitle: "Podóloga Perto de Mim • Sandra Barreto • Atendimento no Campo Belo",
-        seoDesc: "Encontre alívio para dores nos pés com a Dra. Sandra Barreto. Atendimento especializado próximo a você no Campo Belo, Moema e Brooklin. Agende!"
+        heroTitle: <>Podóloga Profissional <span className="text-brand-secondary">Local Perto de Você</span></>,
+        heroSubtitle: <p>Localização estratégica no <strong>Campo Belo</strong> com fácil acesso para <strong>Moema, Brooklin e Aeroporto</strong>. A clínica especializada mais completa da região.</p>,
+        seoTitle: "Podóloga Perto de Mim • Dra. Sandra Barreto • Profissional Local",
+        seoDesc: "Encontre tratamento clínico definitivo para dores nos pés com a Dra. Sandra Barreto. Atendimento especializado próximo a você no Campo Belo."
     },
     // Service-specific Landing Pages
     'unha-encravada-perto-de-mim': {
         heroTitle: <>Tratamento para <span className="text-brand-secondary">Unha Encravada</span> Perto de Você</>,
-        heroSubtitle: <p>Alívio imediato da dor com técnicas especializadas. Atendimento de emergência para <strong>unha inflamada e infeccionada</strong> no Campo Belo, perto de Moema.</p>,
-        seoTitle: "Tratamento de Unha Encravada em Campo Belo • Sandra Barreto • Alívio Já",
-        seoDesc: "Dor na unha? Especialista em unha encravada com atendimento de emergência no Campo Belo e Zona Sul. Alívio imediato e técnicas indolores. Agende!"
+        heroSubtitle: <p>Alívio imediato da dor com técnicas clínicas especializadas. Atendimento de urgência por uma <strong>profissional local</strong> no Campo Belo e arredores.</p>,
+        seoTitle: "Tratamento de Unha Encravada em Campo Belo • Dra. Sandra Barreto",
+        seoDesc: "Dor na unha? Profissional local especialista em unha encravada no Campo Belo e Zona Sul. Alívio imediato e técnicas clínicas indolores. Agende!"
     },
     'unha-de-gel-moema': {
         heroTitle: <>Unhas de Gel em <span className="text-brand-secondary">Moema</span></>,

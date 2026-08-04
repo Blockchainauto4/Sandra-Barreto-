@@ -148,10 +148,10 @@ const App: React.FC = () => {
             desc: "Unhas de gel, blindagem e esmaltação premium com biossegurança total. Atendimento especializado no Campo Belo, Moema e Brooklin. Clique para agendar!" 
         };
     }
-    // Default Home SEO - Updated for CTR Optimization
+    // Default Home SEO - High-Performance SEO & CTR
     return { 
-        title: "Podóloga Sandra Barreto em Campo Belo • Atendimento Domiciliar e no Consultório", 
-        desc: "Especialista em podologia clínica na Zona Sul de SP. Atendimento para unha encravada, micoses e pé diabético no Campo Belo, Moema e Brooklin. Agende agora!" 
+        title: "Dra. Sandra Barreto • Podóloga Clínica em Campo Belo SP • Virologia e Tratamentos Podológicos", 
+        desc: "Profissional local especialista em podologia clínica no Campo Belo, Zona Sul de SP. Tratamento de verruga plantar (HPV), micoses, unha encravada e pé diabético com a Dra. Sandra Barreto." 
     };
   };
 
